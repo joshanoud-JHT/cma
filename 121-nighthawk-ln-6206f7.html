@@ -68,13 +68,19 @@
   .avm.na{background:#f6f7f9;border-style:dashed}
   .avm.na .val{color:var(--slate);font-size:20px;font-weight:640}
   .rangebar{margin-top:16px}
-  .rangebar .track{position:relative;height:46px;margin:26px 8px 8px}
-  .rangebar .bar{position:absolute;top:18px;left:0;right:0;height:8px;background:linear-gradient(90deg,#dfe7f0,#cdb893);border-radius:6px}
-  .rangebar .pin{position:absolute;top:6px;transform:translateX(-50%);text-align:center}
+  .rangebar .track{position:relative;height:96px;margin:30px 8px 8px}
+  .rangebar .bar{position:absolute;top:44px;left:0;right:0;height:8px;background:linear-gradient(90deg,#dfe7f0,#cdb893);border-radius:6px}
+  .rangebar .pin{position:absolute;top:32px;transform:translateX(-50%);text-align:center}
+  .rangebar .pin.up{top:-8px}
   .rangebar .dot{width:13px;height:13px;border-radius:50%;background:var(--navy);margin:0 auto;border:2px solid #fff;box-shadow:0 0 0 1px var(--navy)}
+  .rangebar .pin.up .dot{order:3;margin-top:3px}
+  .rangebar .pin.up{display:flex;flex-direction:column;align-items:center}
   .rangebar .pin.agent .dot{background:var(--accent);box-shadow:0 0 0 1px var(--accent2)}
   .rangebar .pin .lab{font-size:10.5px;color:var(--slate);white-space:nowrap;margin-top:3px}
+  .rangebar .pin.up .lab{margin-top:0;order:1}
+  .rangebar .pin.up .amt{order:2}
   .rangebar .pin .amt{font-size:11px;font-weight:700;color:var(--ink)}
+  .rangebar .pin.agent .amt{color:var(--accent2)}
   .rangebar .scale{display:flex;justify-content:space-between;font-size:11px;color:var(--slate);margin:0 8px}
   /* table */
   .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);background:var(--card)}
@@ -161,22 +167,22 @@
   <div class="summary">
     <div>
       <div class="eyebrow">Estimated market value</div>
-      <div class="bignum">$470,000 <small>range $450k&ndash;$495k</small></div>
-      <div class="range-line">Supported value range <b>$450,000 &ndash; $495,000</b>. This home is <b>2,498 heated sq ft</b>, so the value works out to roughly <b>$188/sq ft</b>.</div>
+      <div class="bignum">$459,900 <small>reconciled range $440k&ndash;$475k</small></div>
+      <div class="range-line">Reconciled value range <b>$440,000 &ndash; $475,000</b>, recommended list <b>$459,900</b>. The Grand Landings closed comps point to ~$470k (~$188/sq ft on 2,498 heated sf); four live AVMs cluster at ~$399k&ndash;$426k. The reconciled figure honors both &mdash; and the current $400,000 list sits below either.</div>
       <div class="callout" style="margin-top:12px">
         <h3>Key insight: priced well below the neighborhood</h3>
         <p style="margin:.3em 0">121 Nighthawk Ln is <b>currently listed at $400,000</b> (MLS FC317565) &mdash; the <b>exact same price you paid in April 2023</b> for the new build. Grand Landings sold comps and today's active competition support roughly <b>$450,000&ndash;$495,000</b>. The current list price leaves an estimated <b>$50,000&ndash;$95,000 on the table</b>; we recommend repricing.</p>
       </div>
-      <p class="small muted" style="margin-top:10px">Anchored on <b>7 Grand Landings closed sales</b> (3&ndash;4 bd, 2,200&ndash;2,800 sf, built 2018&ndash;2025) adjusted to this home's profile, plus 3 active competitors. Core six community solds run an adjusted <b>$157&ndash;$208/sq ft</b>; the 2025 new-builds price highest and the 2023 subject tracks that current new-build pricing, so we lean to the upper-middle. The lone private-pool sale (145 S Coopers Hawk, $640k) is held out of the core averages. AVMs pulled this run sit lower (RPR $415,200; Realist/CoreLogic $405,700) as they trail closed comps for near-new homes; the county market value ($359,667) is an assessment that runs low.</p>
+      <p class="small muted" style="margin-top:10px">Anchored on <b>7 Grand Landings closed sales</b> (3&ndash;4 bd, 2,200&ndash;2,800 sf, built 2018&ndash;2025) adjusted to this home's profile, plus 3 active competitors. Core six community solds run an adjusted <b>$157&ndash;$208/sq ft</b>; the 2025 new-builds price highest and the 2023 subject tracks that current new-build pricing, so the comps point to roughly <b>$470k</b>. Four live AVMs cluster lower at <b>~$399k&ndash;$426k</b> (RPR $415,200, Realist/CoreLogic $405,700, Cotality $425,967, Quantarium $398,880), because AVMs weight the home's own $400k 2023 basis and the older/lower 2022 sales rather than the 2025 new-build run-up. Reconciling both honestly yields a <b>$440,000&ndash;$475,000</b> value range and a recommended list near <b>$459,900</b> &mdash; either way, the current $400,000 list is below market. The lone private-pool sale (145 S Coopers Hawk, $640k) is held out of the core averages; the county assessment ($359,667) runs low.</p>
     </div>
     <div>
       <div class="eyebrow">Recommended pricing strategy</div>
       <div class="tiers">
-        <div class="tier"><span class="lab">Aggressive<span>quick sale, low end of supported range</span></span><b>$459,900</b></div>
-        <div class="tier rec"><span class="lab">Recommended list<span>upper-middle of comps, room to negotiate</span></span><b>$479,900</b></div>
-        <div class="tier"><span class="lab">Ambitious<span>at the active ceiling; watch days on market</span></span><b>$499,900</b></div>
+        <div class="tier"><span class="lab">Aggressive<span>quick sale; bridges toward the AVM cluster</span></span><b>$449,900</b></div>
+        <div class="tier rec"><span class="lab">Recommended list<span>reconciled value of comps and AVMs</span></span><b>$459,900</b></div>
+        <div class="tier"><span class="lab">Ambitious<span>upper end of comp support; watch days on market</span></span><b>$479,900</b></div>
       </div>
-      <p class="xs muted" style="margin-top:8px">All three tiers sit comfortably above the current $400,000 list. Active competition in Grand Landings asks $499,900&ndash;$529,900 for similar 4-bed homes, and 2025 new-build solds reached $525k&ndash;$580k, so even the recommended $479,900 leaves competitive room while capturing the value the current price is missing.</p>
+      <p class="xs muted" style="margin-top:8px">All three tiers sit well above the current $400,000 list. The recommended $459,900 reconciles two honest signals: the Grand Landings closed comps point near $470k, while the live AVM cluster (RPR $415,200, Realist/CoreLogic $405,700, Cotality $425,967, Quantarium $398,880) sits ~$399k&ndash;$426k. $459,900 lands between them &mdash; above every AVM, just under the comp-implied figure, and below the active ceiling ($499,900&ndash;$529,900).</p>
     </div>
   </div>
 </div>
@@ -206,7 +212,7 @@
   <div class="sn-inputs">
     <div class="sn-field">
       <label>Sale price</label>
-      <input type="number" id="snPrice" value="479900" step="1000" min="0">
+      <input type="number" id="snPrice" value="459900" step="1000" min="0">
     </div>
     <div class="sn-field">
       <label>Estimated buyer concessions <span class="sn-out" id="snConcOut">4% &middot; $0</span></label>
@@ -327,28 +333,34 @@
 <section>
   <div class="eyebrow">Automated valuations (AVMs) &amp; reference points</div>
   <h2>What the data points say</h2>
-  <p class="muted small">Seven automated valuation models were checked for 121 Nighthawk Ln on June 10, 2026. The ones that publish a value for this address are shown with their estimate and range; the others returned no estimate or could not be reached this run and are labeled accordingly &mdash; no numbers are invented. The comp-supported reconciliation (~$470k) is built from the Grand Landings closings, not from these AVMs.</p>
+  <p class="muted small">Six automated valuation models were checked for 121 Nighthawk Ln on June 10, 2026. Four published a usable estimate this run; Zillow and Collateral Analytics did not. Each is shown with its value and range &mdash; no numbers are invented. The four live AVMs cluster <b>~$399k&ndash;$426k</b>, below the comp-implied figure (~$470k). The recommended list ($459,900) and reconciled range ($440k&ndash;$475k) are built to honor <i>both</i> signals; see the reconciliation note below.</p>
   <div class="grid g4" style="margin-top:14px">
     <div class="card avm"><div class="src">RPR RVM&reg;</div><div class="val">$415,200</div><div class="note">Range $406,900&ndash;$423,500 &middot; 5-star confidence &middot; updated 6/6/2026</div></div>
-    <div class="card avm"><div class="src">Realist RealAVM&trade; (CoreLogic)</div><div class="val">$405,700</div><div class="note">Range $383,300&ndash;$428,100 &middot; confidence 98 &middot; as of 5/26/2026</div></div>
-    <div class="card avm"><div class="src">CoreLogic</div><div class="val">$405,700</div><div class="note">Same CoreLogic value surfaced via Realist RealAVM&trade;</div></div>
-    <div class="card avm na"><div class="src">Zillow Zestimate&reg;</div><div class="val">N/A</div><div class="note">No Zestimate published for this listing (shows &ldquo;$--&rdquo;)</div></div>
-    <div class="card avm na"><div class="src">Realtor.com estimate</div><div class="val">N/A</div><div class="note">Realtor.com not reachable this run &mdash; not available</div></div>
-    <div class="card avm na"><div class="src">Collateral Analytics</div><div class="val">N/A</div><div class="note">Via Realtor.com panel &mdash; not reachable this run</div></div>
-    <div class="card avm na"><div class="src">Quantarium</div><div class="val">N/A</div><div class="note">Via Realtor.com panel &mdash; not reachable this run</div></div>
+    <div class="card avm"><div class="src">Realist RealAVM&trade; (CoreLogic)</div><div class="val">$405,700</div><div class="note">Range $383,300&ndash;$428,100 &middot; confidence 98 &middot; CoreLogic-derived &middot; as of 5/26/2026</div></div>
+    <div class="card avm"><div class="src">Cotality (CoreLogic)</div><div class="val">$425,967</div><div class="note">Realtor.com panel, agent-entered &middot; Cotality = CoreLogic's new name</div></div>
+    <div class="card avm"><div class="src">Quantarium</div><div class="val">$398,880</div><div class="note">Realtor.com panel, agent-entered</div></div>
+    <div class="card avm na"><div class="src">Zillow Zestimate&reg;</div><div class="val">Not available</div><div class="note">No Zestimate published for this new listing</div></div>
+    <div class="card avm na"><div class="src">Collateral Analytics</div><div class="val">Not available</div><div class="note">Realtor.com panel returned blank this run</div></div>
     <div class="card avm flag"><div class="src">County 2026 market value</div><div class="val">$359,667</div><div class="note">Assessment, not market value &mdash; runs low</div></div>
+    <div class="card avm"><div class="src">Current list price</div><div class="val">$400,000</div><div class="note">MLS FC317565 &mdash; cut from $460,000 original list</div></div>
   </div>
   <div class="grid g2" style="margin-top:12px">
-    <div class="card avm"><div class="src">Current list price</div><div class="val">$400,000</div><div class="note">MLS FC317565 &mdash; cut from $460,000 original list</div></div>
-    <div class="card avm agent"><div class="src">Agent reconciled value</div><div class="val">$470,000</div><div class="note">Comp-derived from 7 Grand Landings solds + 3 actives</div></div>
+    <div class="card avm"><div class="src">AVM cluster (4 live models)</div><div class="val">$398,880&ndash;$425,967</div><div class="note">RPR, Realist/CoreLogic, Cotality, Quantarium &mdash; midpoint ~$411k</div></div>
+    <div class="card avm agent"><div class="src">Reconciled value range</div><div class="val">$440,000&ndash;$475,000</div><div class="note">Comps (~$470k) reconciled with the AVM cluster &middot; recommended list $459,900</div></div>
   </div>
 
   <div class="rangebar card" style="margin-top:16px;padding:14px 18px 20px">
-    <div class="small muted">Where the AVMs and the comp-supported value land</div>
+    <div class="small muted">Where the live AVMs, the comp value and the recommended list land</div>
     <div class="track" id="avmTrack"></div>
-    <div class="scale"><span>$400k</span><span>$500k</span></div>
+    <div class="scale"><span>$390k</span><span>$480k</span></div>
   </div>
-  <p class="xs muted">The two live AVMs (Realist/CoreLogic $405,700 and RPR $415,200) cluster just above the current $400,000 list and well above the county assessment ($359,667) &mdash; but both lag the Grand Landings closed comps, which AVMs typically trail for near-new homes in a fast-appreciating subdivision. The comp-derived reconciliation (~$470,000, range $450k&ndash;$495k) is the primary valuation, built from seven adjusted community closings plus three active competitors. Four of the seven AVMs (Zillow, Realtor.com estimate, Collateral Analytics, Quantarium) returned no value or were unreachable this run and are shown as N/A rather than estimated.</p>
+  <p class="xs muted">All four live AVMs (RPR $415,200, Realist/CoreLogic $405,700, Cotality $425,967, Quantarium $398,880) sit in a tight <b>$399k&ndash;$426k</b> band &mdash; above the current $400,000 list and the county assessment ($359,667), but below the Grand Landings closed comps. AVMs typically trail for near-new homes in a fast-appreciating subdivision because they weight the home's own 2023 $400k basis and the older/lower 2022 sales rather than the 2025 new-build run-up. The comp-derived value (~$470k) and the AVM cluster (~$411k midpoint) are both shown honestly; the reconciled range is $440k&ndash;$475k with a recommended list of $459,900. Zillow and Collateral Analytics published no value this run and are marked Not available rather than estimated.</p>
+
+  <div class="callout" style="margin-top:16px">
+    <h3>Reconciling the comps vs. the AVMs &mdash; why they differ, and where we land</h3>
+    <p style="margin:.3em 0">Two credible signals disagree, so we show both rather than picking the flattering one. <b>The closed comps imply ~$470k:</b> the 2025 Grand Landings new-builds (300/302/304 Grand Landings Pkwy) sold $482k&ndash;$580k and the 2023-built 499 Grand Landings Pkwy &mdash; same builder, same 2,498 sf as the subject &mdash; closed at $490,000, so on a like-for-like $/SF basis this home prices into the high-$400s. <b>The four live AVMs imply ~$405k&ndash;$426k:</b> automated models lean heavily on the home's own 2023 transaction (~$400k) and on the older, lower 2022 closings (484 Grand Landings $445k, 133 Wood Stork $480k), and they lag a fast-appreciating new-build pocket. Both are defensible; neither is the whole story.</p>
+    <p style="margin:.3em 0"><b>Reconciled position:</b> a value <b>range of $440,000&ndash;$475,000</b> with a <b>recommended list of $459,900</b> &mdash; deliberately set above every AVM (top AVM is Cotality at $425,967) and just under the comp-implied $470k, while staying below the active competition's $499,900&ndash;$529,900 asks. The one fact both methods agree on: <b>the current $400,000 list is below market.</b></p>
+  </div>
 </section>
 
 <!-- MLS VERIFIED -->
@@ -513,7 +525,7 @@
     </div>
     <div class="callout">
       <h3>Why this matters for your list price</h3>
-      <p>The home is currently listed at $400,000 &mdash; flat to its 2023 new-build price. Applying these calibrated adjustments to seven Grand Landings closings restates the subject at roughly <b>$450,000&ndash;$495,000</b>, centered near <b>$470,000</b>. Repricing to the recommended <b>$479,900</b> captures that value while staying below the active competition's $499,900&ndash;$529,900 asks.</p>
+      <p>The home is currently listed at $400,000 &mdash; flat to its 2023 new-build price. Applying these calibrated adjustments to seven Grand Landings closings restates the subject at roughly <b>$450,000&ndash;$495,000</b> (centered ~$470,000) on the comp method. The four live AVMs sit lower (~$399k&ndash;$426k), so the reconciled position blends both into a <b>$440,000&ndash;$475,000</b> range. Repricing to the recommended <b>$459,900</b> captures most of that value, clears every AVM, and stays below the active competition's $499,900&ndash;$529,900 asks.</p>
     </div>
   </div>
 </section>
@@ -554,19 +566,20 @@
       <ul class="clean">
         <li><b>Reasonable-to-high.</b> Seven community closings plus three actives, all inside the same HOA community, give a tight, like-for-like set.</li>
         <li>The subject is a near-new 2023 build, so it tracks current new-construction pricing (the 2025 closings) more than the 2022 resales; the value leans to the upper-middle of the range.</li>
-        <li>AVMs pulled this run (June 10, 2026): <b>RPR RVM&reg; $415,200</b> (range $406.9k&ndash;$423.5k, 5-star confidence) and <b>Realist RealAVM&trade; / CoreLogic $405,700</b> (range $383.3k&ndash;$428.1k, confidence 98). Both run above the current $400,000 list and the county assessment ($359,667) but trail the closed comps, as AVMs typically do for near-new homes in a fast-appreciating subdivision. Zillow shows no Zestimate for this listing; the Realtor.com panel (Realtor.com estimate, Collateral Analytics, Quantarium) could not be reached this run &mdash; those four are marked N/A, not estimated.</li>
-        <li><b>MLS sources searched (June 10, 2026), same matched criteria across systems</b> &mdash; County Flagler, Grand Landings, 3&ndash;4 bd, 2,200&ndash;2,800 sq ft, built 2018&ndash;2025: <b>Stellar MLS (Matrix)</b>, the primary board for Flagler, returned <b>7 closed (last 12 mo) and 3 active</b> &mdash; the basis for this analysis. <b>realMLS (Flexmls)</b> was opened and the matched closed/active search was built on its Daytona/St. Johns data-share, but the realMLS session expired before the result count could be retrieved, so its count is <b>not available this run</b>. <b>Citrus County MLS</b> could not be run this session &mdash; no logged-in Citrus session was available, so it is <b>not available this run</b> (Citrus is out of area and is expected to return 0). No counts are assumed for the two systems that could not be completed.</li>
+        <li>AVMs pulled this run (June 10, 2026): four live models &mdash; <b>RPR RVM&reg; $415,200</b> (range $406.9k&ndash;$423.5k, 5-star confidence), <b>Realist RealAVM&trade; / CoreLogic $405,700</b> (range $383.3k&ndash;$428.1k, confidence 98), <b>Cotality (CoreLogic) $425,967</b> and <b>Quantarium $398,880</b> (both from the Realtor.com panel, agent-entered). They cluster $398.9k&ndash;$426.0k &mdash; above the $400,000 list and the county assessment ($359,667) but below the closed comps, as AVMs typically trail for near-new homes in a fast-appreciating subdivision. <b>Zillow</b> publishes no Zestimate for this new listing and <b>Collateral Analytics</b> returned blank; both are marked Not available, not estimated. (Cotality = CoreLogic's new brand name.)</li>
+        <li><b>MLS sources searched (June 10, 2026), same matched criteria across systems</b> &mdash; County Flagler / Palm Coast, Grand Landings, 3&ndash;4 bd, ~2,200&ndash;2,800 sq ft, built 2018&ndash;2025. <b>Stellar MLS (Matrix)</b>, the primary board for Flagler, returned <b>7 closed (last 12 mo) and 3 active</b> &mdash; the basis for this analysis. <b>realMLS (Flexmls)</b> was run live this session on its realMLS / Daytona Beach / Space Coast / St. Augustine &amp; St. Johns datashare (City = Palm Coast, Subdivision = Grand Landings): <b>16 closed in the last 12 months and 7 active</b> (raw counts, which include datashare duplicate entries &mdash; about 13 unique closed and 5 unique active). The realMLS pull confirmed the Stellar comps (133 Wood Stork Ln, and 300/302/304 &amp; 499 Grand Landings Pkwy appear identically) and surfaced no new in-band like-for-like comp that would change the analysis; the off-band extras it added (e.g., 1,700&ndash;2,000 sf homes in the $340k&ndash;$400k range and 3,200&ndash;3,300 sf homes at $565k&ndash;$700k) fall outside the subject's size band. <b>Citrus County MLS</b> could not be run this session &mdash; no logged-in Citrus MLS tab/session was available in the browser, so its count is <b>not available this run</b> (no number is assumed; Citrus is out of area and expected to return 0, but it was not actually executed).</li>
       </ul>
     </div>
     <div>
       <h3 style="margin-bottom:6px">Sources</h3>
       <div class="src-list">
         Stellar MLS (Matrix) &mdash; 7 Grand Landings closed sales (last 12 mo) + 3 active listings (primary basis), pulled in-session 6/10/2026<br>
-        realMLS (Flexmls) &mdash; matched search built on Daytona/St. Johns data-share; session expired before count returned &mdash; not available this run<br>
-        Citrus County MLS &mdash; no logged-in session available &mdash; not run this session (not available)<br>
+        realMLS (Flexmls) &mdash; run live 6/10/2026 on the realMLS/Daytona/Space Coast/St. Augustine datashare (Palm Coast + Grand Landings): 16 closed (12 mo) / 7 active raw (~13 / ~5 unique); confirmed Stellar comps, no new in-band comp<br>
+        Citrus County MLS &mdash; not available this run: no logged-in Citrus MLS session/tab present in the browser (count not executed, none assumed)<br>
         RPR (narrpr.com) &mdash; RVM&reg; $415,200 (range $406.9k&ndash;$423.5k), pulled in-session 6/10/2026<br>
         Realist (via Matrix TAX) &mdash; RealAVM&trade; / CoreLogic $405,700 (range $383.3k&ndash;$428.1k), pulled in-session 6/10/2026<br>
-        Zillow &mdash; no Zestimate published for this listing; Realtor.com panel (Realtor.com est., Collateral Analytics, Quantarium) not reachable this run<br><br>
+        Cotality (CoreLogic) &mdash; $425,967, Realtor.com panel (agent-entered) &middot; Quantarium &mdash; $398,880, Realtor.com panel (agent-entered)<br>
+        Zillow &mdash; no Zestimate published for this listing &middot; Collateral Analytics &mdash; blank on the Realtor.com panel this run (both Not available)<br><br>
         Flagler County Property Appraiser (qPublic) &mdash; subject record, parcel 20-12-31-2964-00000-1490, county-verified<br>
         <a href="https://qpublic.schneidercorp.com/Application.aspx?App=FlaglerCountyFL&Layer=Parcels&PageType=Search" target="_blank">qpublic.schneidercorp.com / Flagler County</a><br><br>
         Stellar MLS &mdash; subject current listing MLS FC317565, $400,000<br><br>
@@ -715,18 +728,20 @@ function compute(){
 
 /* ---------- VALUE RANGE BAR ---------- */
 function renderAvm(){
-  const lo=400000, hi=500000;
+  const lo=390000, hi=480000;
   const pts=[
-    {lab:"Realist / CoreLogic", amt:405700, cls:""},
-    {lab:"RPR RVM", amt:415200, cls:""},
-    {lab:"Agent ~$470k", amt:470000, cls:"agent"},
-    {lab:"Comp high", amt:495000, cls:""},
+    {lab:"Quantarium", amt:398880, cls:"", pos:"down"},
+    {lab:"Realist / CoreLogic", amt:405700, cls:"", pos:"up"},
+    {lab:"RPR RVM", amt:415200, cls:"", pos:"down"},
+    {lab:"Cotality", amt:425967, cls:"", pos:"up"},
+    {lab:"Recommended $459,900", amt:459900, cls:"agent", pos:"down"},
+    {lab:"Comps ~$470k", amt:470000, cls:"agent", pos:"up"},
   ];
   const t=document.getElementById("avmTrack");
   let html='<div class="bar"></div>';
   pts.forEach(p=>{
-    const x=(p.amt-lo)/(hi-lo)*100;
-    html+=`<div class="pin ${p.cls}" style="left:${x}%">
+    const x=Math.max(0,Math.min(100,(p.amt-lo)/(hi-lo)*100));
+    html+=`<div class="pin ${p.cls} ${p.pos==='up'?'up':''}" style="left:${x}%">
       <div class="dot"></div><div class="amt">${fmt(p.amt)}</div><div class="lab">${p.lab}</div></div>`;
   });
   t.innerHTML=html;
