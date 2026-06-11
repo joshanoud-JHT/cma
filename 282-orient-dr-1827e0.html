@@ -198,19 +198,27 @@
     #timing .tm-stat{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;text-align:center;box-shadow:var(--shadow)}
     #timing .tm-stat .lab{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
     #timing .tm-stat .v{font-size:21px;font-weight:800;color:var(--navy);margin-top:4px;font-variant-numeric:tabular-nums}
-    #timing .tm-table{width:100%;border-collapse:collapse;font-size:13.5px}
-    #timing .tm-table th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);text-align:left;padding:8px 10px;border-bottom:2px solid var(--navy)}
-    #timing .tm-table td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+    #timing .tm-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);background:var(--card)}
+    #timing .tm-table{border-collapse:collapse;width:100%;min-width:0;table-layout:fixed;font-size:13.5px}
+    #timing .tm-table th,#timing .tm-table td{white-space:normal;text-align:left;min-width:0;position:static;cursor:default;font-variant-numeric:normal;background:none}
+    #timing .tm-table th{background:var(--navy);color:#fff;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px}
+    #timing .tm-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
+    #timing .tm-table tr:last-child td{border-bottom:none}
+    #timing .tm-table col.c1{width:15%}
+    #timing .tm-table col.c2{width:14%}
+    #timing .tm-table col.c3{width:21%}
+    #timing .tm-table col.c4{width:50%}
     #timing .tm-table .price{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
-    #timing .tm-table .dom{font-weight:700;color:var(--accent2);white-space:nowrap}
+    #timing .tm-table .dom{font-weight:700;color:var(--accent2)}
     #timing .tm-table .tier{font-weight:700}
     #timing .tm-note{color:var(--slate)}
+    @media (max-width:640px){#timing .tm-table{table-layout:auto;min-width:560px}}
   </style>
   <div class="eyebrow">Price vs. time</div>
   <h2>The tradeoff every seller asks about</h2>
   <p class="small muted" id="tmIntro"></p>
   <div class="tm-stats" id="tmStats"></div>
-  <div class="card" style="padding:4px 12px"><table class="tm-table"><thead><tr><th>Strategy</th><th>List price</th><th>Expected time on market</th><th>What to expect</th></tr></thead><tbody id="tmBody"></tbody></table></div>
+  <div class="tm-wrap"><table class="tm-table"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup><thead><tr><th>Strategy</th><th>List price</th><th>Expected time on market</th><th>What to expect</th></tr></thead><tbody id="tmBody"></tbody></table></div>
   <p class="xs muted" style="margin-top:8px">Days-on-market figures come from how the matched sold comps actually performed relative to their adjusted values over this window. Market conditions can change; this is a planning guide, not a guarantee.</p>
   <script>
   (function(){
