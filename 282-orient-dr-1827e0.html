@@ -813,5 +813,142 @@ header.hero{background:linear-gradient(120deg,rgba(22,38,61,.93) 0%,rgba(22,38,6
 </section>
 
 </div>
+<!-- JHT Tooltip Glossary. Self-contained; paste this whole block immediately BEFORE
+     <!-- JHT report open-tracking beacon. Paste this whole block immediately BEFORE </body>
+     in every published CMA (after the tooltip glossary block). No placeholders.
+     What it does: on page open, sends a GET beacon (address + page + device class) to the
+     CMA Report Open Relay (Google Apps Script in Josh's account), which forwards it to the
+     Airtable webhook; the "Report open logger" automation files a row in Report Opens and
+     the "Report open hand-raise notify" automation emails Josh instantly. The CMA poller
+     later writes the view to the matched lead's Follow Up Boss file.
+     Privacy/noise controls: open the report with #agent on the URL to view WITHOUT pinging
+     (e.g. cma.joshhanoud.com/x.html#agent); repeat opens on the same device within 30
+     minutes are not re-sent; only the address (already in the public URL), the page path,
+     and a coarse device class are transmitted - no names, emails, or precise identifiers. -->
+<script>
+(function(){
+  var RELAY='https://script.google.com/macros/s/AKfycbw75t7LCeY_KtOHs5Mpgbbo11kOYpHUv0rubmqm8LeZWjDXwvhT5A2UVH13ebJH0K-L/exec';
+  try{
+    if(location.hash==='#agent')return;
+    var k='jht_open_'+location.pathname,now=Date.now();
+    var last=parseInt(localStorage.getItem(k)||'0',10);
+    if(now-last<1800000)return;
+    localStorage.setItem(k,String(now));
+    var h1=document.querySelector('h1');
+    var addr=h1?h1.textContent.trim():location.pathname;
+    var dev=(/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop');
+    var u=RELAY+'?address='+encodeURIComponent(addr)+'&page='+encodeURIComponent(location.pathname+location.search)+'&device='+dev;
+    (new Image()).src=u;
+  }catch(e){}
+})();
+</script>
+
+</body>. No placeholders and no manual markup: the script scans the report once on
+     load and wraps the first few occurrences of each glossary term with a dotted
+     underline; hover (desktop) or tap (mobile) shows a plain-language bubble. Terms it
+     can't find are simply skipped, so this same block works in every report. -->
+<style>
+  .jht-tip{border-bottom:1.5px dotted var(--accent,#c9a227);cursor:help}
+  #jhtBubble{position:fixed;z-index:9999;max-width:300px;background:var(--navy,#16263d);color:#fff;border-radius:10px;padding:11px 13px;font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.25);display:none;pointer-events:none}
+  #jhtBubble b{color:var(--accent,#c9a227);display:block;margin-bottom:3px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+</style>
+<script>
+(function(){
+  var G=[
+    ["months of inventory","How long it would take to sell every home currently for sale at today's pace. Under about 6 months favors sellers."],
+    ["sold-to-list ratio","What homes actually sold for vs. their asking price. 96% means a $400,000 listing typically closed near $384,000."],
+    ["median days to contract","How long it took half the recent sales to get an accepted offer. Lower means a faster market."],
+    ["days on market","How long a home has been for sale without an accepted offer."],
+    ["buyer concession","Money the seller credits the buyer at closing, usually toward the buyer's loan costs. Common in this market and priced into the deal."],
+    ["buyer concessions","Money the seller credits the buyer at closing, usually toward the buyer's loan costs. Common in this market and priced into the deal."],
+    ["seller concessions","Money the seller credited the buyer at closing. We subtract it to see what the seller truly received."],
+    ["doc stamps","Florida's transfer tax on the deed: 70 cents per $100 of the sale price. The seller customarily pays it."],
+    ["title insurance","A one-time policy guaranteeing the buyer gets clean ownership. In this area the seller customarily buys it."],
+    ["mortgage payoff","What you still owe your lender, paid off out of the sale money at closing."],
+    ["net proceeds","The cash you walk away with after all costs and your loan payoff."],
+    ["net to seller","The cash you walk away with after all costs and your loan payoff."],
+    ["adjusted value","Each sale restated as if that home were yours: we add or subtract for differences like a bathroom or garage bay."],
+    ["adjusted","We add or subtract value for feature differences so every sale compares apples to apples with your home."],
+    ["comparable","A recently sold home similar enough to yours that a buyer would consider both. The foundation of pricing."],
+    ["comps","Recently sold homes similar to yours that buyers would also consider. The foundation of pricing."],
+    ["AVM","Automated Valuation Model: a computer's price estimate, like a Zestimate. A useful cross-check, not a verdict."],
+    ["Zestimate","Zillow's computer-generated estimate. A useful cross-check, but it can't see condition or upgrades."],
+    ["pending","Under contract but not closed yet. Pendings show where the market is heading right now."],
+    ["heated","Air-conditioned living space as measured by the county. Garages, porches and lanais don't count."],
+    ["appraisal","A licensed appraiser's formal value opinion, ordered later by the buyer's lender. This report is a market analysis, not an appraisal."],
+    ["homestead","Florida's tax break on a primary residence. It caps how fast the taxable value can rise, and it resets when a home sells."],
+    ["$/SF","Price divided by living area. It lets us compare homes of different sizes fairly."]
+  ];
+  var SKIP=/^(SCRIPT|STYLE|A|BUTTON|INPUT|SELECT|TEXTAREA|H1|SVG|CANVAS|LABEL)$/;
+  function annotateAll(){
+    var tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+    var nodes=[];while(n=tw.nextNode())if(n.nodeValue.length>2)nodes.push(n);
+    var items=G.map(function(g){return {rx:new RegExp('(^|[^\\w$])('+g[0].replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&')+')($|[^\\w])','i'),def:g[1],hits:0};});
+    for(var i=0;i<nodes.length;i++){
+      n=nodes[i];
+      var p=n.parentNode;if(!p||SKIP.test(p.nodeName)||p.closest('.jht-tip,#jhtBubble,a,h1,button'))continue;
+      for(var j=0;j<items.length;j++){
+        var it=items[j];if(it.hits>=2)continue;
+        var m=it.rx.exec(n.nodeValue);if(!m)continue;
+        var idx=m.index+m[1].length,len=m[2].length;
+        var after=n.splitText(idx);var tail=after.splitText(len);
+        var span=document.createElement('span');span.className='jht-tip';span.setAttribute('data-def',it.def);span.setAttribute('data-term',m[2]);
+        span.textContent=after.nodeValue;p.replaceChild(span,after);
+        it.hits++;nodes.splice(i+1,0,tail);
+        break;
+      }
+    }
+  }
+  function init(){
+    annotateAll();
+    var b=document.createElement('div');b.id='jhtBubble';document.body.appendChild(b);
+    var current=null;
+    function show(el){
+      current=el;
+      b.innerHTML='<b>'+el.getAttribute('data-term')+'</b>'+el.getAttribute('data-def');
+      b.style.display='block';
+      var r=el.getBoundingClientRect(),bw=b.offsetWidth,bh=b.offsetHeight;
+      var x=Math.max(8,Math.min(window.innerWidth-bw-8,r.left+r.width/2-bw/2));
+      var y=r.top-bh-8;if(y<8)y=r.bottom+8;
+      b.style.left=x+'px';b.style.top=y+'px';
+    }
+    function hide(){b.style.display='none';current=null;}
+    document.addEventListener('mouseover',function(e){var t=e.target.closest('.jht-tip');if(t)show(t);else if(!e.target.closest('#jhtBubble'))hide();});
+    document.addEventListener('click',function(e){var t=e.target.closest('.jht-tip');if(t&&current!==t){e.preventDefault();show(t);}else if(!t)hide();});
+    window.addEventListener('scroll',hide,{passive:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+
+<!-- JHT report open-tracking beacon. Paste this whole block immediately BEFORE </body>
+     in every published CMA (after the tooltip glossary block). No placeholders.
+     What it does: on page open, sends a GET beacon (address + page + device class) to the
+     CMA Report Open Relay (Google Apps Script in Josh's account), which forwards it to the
+     Airtable webhook; the "Report open logger" automation files a row in Report Opens and
+     the "Report open hand-raise notify" automation emails Josh instantly. The CMA poller
+     later writes the view to the matched lead's Follow Up Boss file.
+     Privacy/noise controls: open the report with #agent on the URL to view WITHOUT pinging
+     (e.g. cma.joshhanoud.com/x.html#agent); repeat opens on the same device within 30
+     minutes are not re-sent; only the address (already in the public URL), the page path,
+     and a coarse device class are transmitted - no names, emails, or precise identifiers. -->
+<script>
+(function(){
+  var RELAY='https://script.google.com/macros/s/AKfycbw75t7LCeY_KtOHs5Mpgbbo11kOYpHUv0rubmqm8LeZWjDXwvhT5A2UVH13ebJH0K-L/exec';
+  try{
+    if(location.hash==='#agent')return;
+    var k='jht_open_'+location.pathname,now=Date.now();
+    var last=parseInt(localStorage.getItem(k)||'0',10);
+    if(now-last<1800000)return;
+    localStorage.setItem(k,String(now));
+    var h1=document.querySelector('h1');
+    var addr=h1?h1.textContent.trim():location.pathname;
+    var dev=(/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop');
+    var u=RELAY+'?address='+encodeURIComponent(addr)+'&page='+encodeURIComponent(location.pathname+location.search)+'&device='+dev;
+    (new Image()).src=u;
+  }catch(e){}
+})();
+</script>
+
 </body>
 </html>
