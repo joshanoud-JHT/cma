@@ -287,6 +287,59 @@
   </script>
 </section>
 
+<section id="sngrid">
+  <style>
+    #sngrid .sg-table{width:100%;max-width:560px;min-width:0;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+    #sngrid .sg-table th,#sngrid .sg-table td{white-space:normal;min-width:0;position:static;cursor:default}
+    #sngrid .sg-table th{background:var(--navy);color:#fff;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;text-align:right}
+    #sngrid .sg-table th:first-child{text-align:left}
+    #sngrid .sg-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+    #sngrid .sg-table td:first-child{text-align:left}
+    #sngrid .sg-table tr.cur td{background:var(--chip);font-weight:700;color:var(--navy)}
+    #sngrid .sg-table tr.cur td:first-child::after{content:" \2190 your price";font-size:11px;color:var(--accent2);font-weight:600}
+    #sngrid .sg-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);background:var(--card);max-width:560px}
+    #sngrid .sg-note{margin-top:8px}
+  </style>
+  <div class="eyebrow">Estimated seller net at a glance</div>
+  <h2>Net proceeds across the price ladder</h2>
+  <p class="small muted">This grid follows the calculator above. Change the sale price, concession slider, payoff, or any line item up there and every row here recomputes.</p>
+  <div class="sg-wrap"><table class="sg-table"><thead><tr><th>Sale price</th><th>Costs &amp; payoff</th><th>Seller net</th></tr></thead><tbody id="sgBody"></tbody></table></div>
+  <p class="xs muted sg-note" id="sgNote"></p>
+  <script>
+  (function(){
+    var ids=['snPrice','snConc','snPayoff','snM1V','snM2V','snM3V'];
+    if(ids.slice(0,2).some(function(id){return !document.getElementById(id);})) return; // requires interactive section
+    var f=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+    function num(id){var el=document.getElementById(id);if(!el)return 0;var v=parseFloat(el.value);return isNaN(v)?0:v;}
+    function render(){
+      var price=num('snPrice'), concPct=num('snConc');
+      var payoff=num('snPayoff'), misc=num('snM1V')+num('snM2V')+num('snM3V');
+      var top=Math.ceil(price/10000)*10000;
+      var html='';
+      for(var i=0;i<7;i++){
+        var p=top-i*5000; if(p<=0)break;
+        var commission=Math.max(p*0.04,4000)+300;
+        var conc=p*(concPct/100);
+        var title=Math.max(575+500*((p-100000)/100000),575);
+        var doc=p*0.007;
+        var costs=commission+conc+title+doc+payoff+misc;
+        var net=p-costs;
+        var cur=Math.abs(p-price)<2500?' class="cur"':'';
+        html+='<tr'+cur+'><td>'+f(p)+'</td><td>'+f(costs)+'</td><td><b>'+f(net)+'</b></td></tr>';
+      }
+      document.getElementById('sgBody').innerHTML=html;
+      var bits=['brokerage 4% + $300','buyer concessions '+concPct+'%','title insurance (FL sliding scale)','doc stamps 0.7%'];
+      if(payoff>0)bits.push('mortgage payoff '+f(payoff));
+      if(misc>0)bits.push('other items '+f(misc));
+      document.getElementById('sgNote').textContent='Each row includes: '+bits.join(', ')+'. Estimate only; confirm final figures with your closing agent.';
+    }
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',render);});
+    render();
+  })();
+  </script>
+</section>
+
+
 
 <section>
   <div class="eyebrow">The property</div>
