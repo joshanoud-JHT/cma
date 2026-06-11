@@ -210,7 +210,7 @@
     #timing .tm-table col.c4{width:50%}
     #timing .tm-table .price{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
     #timing .tm-table .dom{font-weight:700;color:var(--accent2)}
-    #timing .tm-table .tier{font-weight:700}
+    #timing .tm-table .tm-tier{font-weight:700;display:table-cell;border:none;border-radius:0}
     #timing .tm-note{color:var(--slate)}
     @media (max-width:640px){#timing .tm-table{table-layout:auto;min-width:560px}}
   </style>
@@ -229,7 +229,7 @@
     var sEl=document.getElementById('tmStats');
     stats.forEach(function(s){sEl.insertAdjacentHTML('beforeend','<div class="tm-stat"><div class="lab">'+s[0]+'</div><div class="v">'+s[1]+'</div></div>');});
     var b=document.getElementById('tmBody');
-    t.tiers.forEach(function(x){b.insertAdjacentHTML('beforeend','<tr><td class="tier">'+x.label+'</td><td class="price">'+f(x.price)+'</td><td class="dom">'+x.dom+'</td><td class="tm-note">'+x.note+'</td></tr>');});
+    t.tiers.forEach(function(x){b.insertAdjacentHTML('beforeend','<tr><td class="tm-tier">'+x.label+'</td><td class="price">'+f(x.price)+'</td><td class="dom">'+x.dom+'</td><td class="tm-note">'+x.note+'</td></tr>');});
   })();
   </script>
 </section>
