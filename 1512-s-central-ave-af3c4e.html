@@ -760,11 +760,12 @@ function renderAdj(){
 renderSliders();renderAdj();
 </script>
 
-<!-- JHT Tooltip Glossary. Self-contained; paste this whole block immediately BEFORE
-     </body>. No placeholders and no manual markup: the script scans the report once on
-     load and wraps the first few occurrences of each glossary term with a dotted
-     underline; hover (desktop) or tap (mobile) shows a plain-language bubble. Terms it
-     can't find are simply skipped, so this same block works in every report. -->
+<!-- JHT Tooltip Glossary. Self-contained; paste this whole block at the VERY END of
+     the document, just above the final closing body tag. No placeholders and no manual
+     markup: the script scans the report once on load and wraps the first few occurrences
+     of each glossary term with a dotted underline; hover (desktop) or tap (mobile) shows
+     a plain-language bubble. Terms it can't find are simply skipped, so this same block
+     works in every report. -->
 <style>
   .jht-tip{border-bottom:1.5px dotted var(--accent,#c9a227);cursor:help}
   #jhtBubble{position:fixed;z-index:9999;max-width:300px;background:var(--navy,#16263d);color:#fff;border-radius:10px;padding:11px 13px;font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.25);display:none;pointer-events:none}
@@ -839,9 +840,8 @@ renderSliders();renderAdj();
 })();
 </script>
 
-
-<!-- JHT report open-tracking beacon. Paste this whole block immediately BEFORE </body>
-     in every published CMA (after the tooltip glossary block). No placeholders.
+<!-- JHT report open-tracking beacon. Paste this whole block at the VERY END of every
+     published CMA, after the tooltip glossary block, just above the final closing body tag. No placeholders.
      What it does: on page open, sends a GET beacon (address + page + device class) to the
      CMA Report Open Relay (Google Apps Script in Josh's account), which forwards it to the
      Airtable webhook; the "Report open logger" automation files a row in Report Opens and
@@ -868,7 +868,6 @@ renderSliders();renderAdj();
   }catch(e){}
 })();
 </script>
-
 
 </body>
 </html>
