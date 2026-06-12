@@ -27,7 +27,10 @@
 header.hero{background:linear-gradient(120deg,rgba(22,38,61,.93) 0%,rgba(22,38,61,.82) 45%,rgba(34,54,79,.62) 100%),var(--heroimg) center 38%/cover no-repeat;padding:56px 0 46px}
 @media (max-width:640px){header.hero{padding:40px 0 34px}}
 
-  header .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  header .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:nowrap}
+header .wrap>div:first-child{flex:1 1 auto;min-width:0}
+.prep{flex:0 0 auto;max-width:340px}
+@media (max-width:700px){header .wrap{flex-wrap:wrap}.prep{max-width:none;align-items:flex-start;text-align:left}}
   .brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
   header h1{color:#fff;font-size:30px;line-height:1.15;margin-top:6px}
   header .sub{color:#b9c6d6;font-size:14px;margin-top:6px}
