@@ -828,40 +828,13 @@ function renderMls(){
 }
 renderComps(); renderPpsf(); compute(); renderAvm(); renderActives(); renderMls();
 </script>
-<!-- JHT Tooltip Glossary. Self-contained; paste this whole block immediately BEFORE
-     <!-- JHT report open-tracking beacon. Paste this whole block immediately BEFORE </body>
-     in every published CMA (after the tooltip glossary block). No placeholders.
-     What it does: on page open, sends a GET beacon (address + page + device class) to the
-     CMA Report Open Relay (Google Apps Script in Josh's account), which forwards it to the
-     Airtable webhook; the "Report open logger" automation files a row in Report Opens and
-     the "Report open hand-raise notify" automation emails Josh instantly. The CMA poller
-     later writes the view to the matched lead's Follow Up Boss file.
-     Privacy/noise controls: open the report with #agent on the URL to view WITHOUT pinging
-     (e.g. cma.joshhanoud.com/x.html#agent); repeat opens on the same device within 30
-     minutes are not re-sent; only the address (already in the public URL), the page path,
-     and a coarse device class are transmitted - no names, emails, or precise identifiers. -->
-<script>
-(function(){
-  var RELAY='https://script.google.com/macros/s/AKfycbw75t7LCeY_KtOHs5Mpgbbo11kOYpHUv0rubmqm8LeZWjDXwvhT5A2UVH13ebJH0K-L/exec';
-  try{
-    if(location.hash==='#agent')return;
-    var k='jht_open_'+location.pathname,now=Date.now();
-    var last=parseInt(localStorage.getItem(k)||'0',10);
-    if(now-last<1800000)return;
-    localStorage.setItem(k,String(now));
-    var h1=document.querySelector('h1');
-    var addr=h1?h1.textContent.trim():location.pathname;
-    var dev=(/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop');
-    var u=RELAY+'?address='+encodeURIComponent(addr)+'&page='+encodeURIComponent(location.pathname+location.search)+'&device='+dev;
-    (new Image()).src=u;
-  }catch(e){}
-})();
-</script>
 
-</body>. No placeholders and no manual markup: the script scans the report once on
-     load and wraps the first few occurrences of each glossary term with a dotted
-     underline; hover (desktop) or tap (mobile) shows a plain-language bubble. Terms it
-     can't find are simply skipped, so this same block works in every report. -->
+<!-- JHT Tooltip Glossary. Self-contained; paste this whole block at the VERY END of
+     the document, just above the final closing body tag. No placeholders and no manual
+     markup: the script scans the report once on load and wraps the first few occurrences
+     of each glossary term with a dotted underline; hover (desktop) or tap (mobile) shows
+     a plain-language bubble. Terms it can't find are simply skipped, so this same block
+     works in every report. -->
 <style>
   .jht-tip{border-bottom:1.5px dotted var(--accent,#c9a227);cursor:help}
   #jhtBubble{position:fixed;z-index:9999;max-width:300px;background:var(--navy,#16263d);color:#fff;border-radius:10px;padding:11px 13px;font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.25);display:none;pointer-events:none}
@@ -936,8 +909,8 @@ renderComps(); renderPpsf(); compute(); renderAvm(); renderActives(); renderMls(
 })();
 </script>
 
-<!-- JHT report open-tracking beacon. Paste this whole block immediately BEFORE </body>
-     in every published CMA (after the tooltip glossary block). No placeholders.
+<!-- JHT report open-tracking beacon. Paste this whole block at the VERY END of every
+     published CMA, after the tooltip glossary block, just above the final closing body tag. No placeholders.
      What it does: on page open, sends a GET beacon (address + page + device class) to the
      CMA Report Open Relay (Google Apps Script in Josh's account), which forwards it to the
      Airtable webhook; the "Report open logger" automation files a row in Report Opens and
