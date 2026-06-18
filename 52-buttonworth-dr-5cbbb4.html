@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparative Market Analysis &mdash; 52 Buttonworth Dr, Palm Coast FL 32137</title>
+<style>
+<style>
+  :root{
+    --navy:#16263d; --navy2:#22364f; --ink:#1d2530; --slate:#5a6b7e;
+    --line:#e3e8ee; --bg:#f5f7fa; --card:#ffffff; --accent:#c8924a; --accent2:#9a6f33;
+    --good:#2f7d5b; --warn:#b5532b; --blue:#2f6db5; --chip:#eef2f7;
+    --shadow:0 1px 3px rgba(20,30,50,.07),0 6px 24px rgba(20,30,50,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{margin:0;font-weight:650;letter-spacing:-.01em;color:var(--navy)}
+  h2{font-size:21px;margin-bottom:4px}
+  h3{font-size:15px}
+  p{margin:.5em 0}
+  .muted{color:var(--slate)}
+  .small{font-size:13px}
+  .xs{font-size:12px}
+  /* header */
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:30px 0 26px}
+header.hero{background:linear-gradient(120deg,rgba(22,38,61,.93) 0%,rgba(22,38,61,.82) 45%,rgba(34,54,79,.62) 100%),var(--heroimg) center 38%/cover no-repeat;padding:56px 0 46px}
+@media (max-width:640px){header.hero{padding:40px 0 34px}}
+
+  header .wrap{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:nowrap}
+header .wrap>div:first-child{flex:1 1 auto;min-width:0}
+.prep{flex:0 0 auto;max-width:340px}
+@media (max-width:700px){header .wrap{flex-wrap:wrap}.prep{max-width:none;align-items:flex-start;text-align:left}}
+  .brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  header h1{color:#fff;font-size:30px;line-height:1.15;margin-top:6px}
+  header .sub{color:#b9c6d6;font-size:14px;margin-top:6px}
+  .tag{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);
+    color:#dfe8f1;border-radius:999px;padding:4px 12px;font-size:12px;margin-top:10px}
+  .prep{text-align:right;color:#cdd8e4;font-size:13px;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+  .prep b{color:#fff;font-size:15px}
+  .brandlogo{background:#fff;padding:9px 14px;border-radius:9px;width:230px;height:auto;display:block;box-shadow:0 2px 10px rgba(0,0,0,.18)}
+  section{padding:26px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent2);font-weight:700;margin-bottom:8px}
+  /* exec summary */
+  .summary{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);
+    margin-top:-30px;position:relative;z-index:2;padding:22px 24px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px}
+  .bignum{font-size:40px;font-weight:750;color:var(--navy);letter-spacing:-.02em;line-height:1}
+  .bignum small{font-size:16px;color:var(--slate);font-weight:600}
+  .range-line{margin-top:10px;font-size:14px;color:var(--ink)}
+  .tiers{display:flex;flex-direction:column;gap:8px}
+  .tier{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);
+    border-radius:10px;padding:9px 13px;font-size:14px}
+  .tier b{font-variant-numeric:tabular-nums}
+  .tier.rec{border-color:var(--accent);background:#fcf7ef}
+  .tier .lab{display:flex;flex-direction:column}
+  .tier .lab span{font-size:11px;color:var(--slate)}
+  /* cards grid */
+  .grid{display:grid;gap:14px}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px;box-shadow:var(--shadow)}
+  .stat .k{font-size:12px;color:var(--slate);text-transform:uppercase;letter-spacing:.05em}
+  .stat .v{font-size:18px;font-weight:680;color:var(--navy);margin-top:3px;font-variant-numeric:tabular-nums}
+  /* AVM */
+  .avm{position:relative}
+  .avm .src{font-size:12px;color:var(--slate);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+  .avm .val{font-size:26px;font-weight:730;color:var(--navy);margin-top:4px;font-variant-numeric:tabular-nums}
+  .avm .note{font-size:12px;color:var(--slate);margin-top:4px}
+  .avm.flag{border-color:#e9d3c5;background:#fdf6f1}
+  .avm.flag .val{color:var(--warn)}
+  .avm.agent{border-color:var(--accent);background:#fcf7ef}
+  .avm.agent .val{color:var(--accent2)}
+  .rangebar{margin-top:16px}
+  .rangebar .track{position:relative;height:46px;margin:26px 8px 8px}
+  .rangebar .bar{position:absolute;top:18px;left:0;right:0;height:8px;background:linear-gradient(90deg,#dfe7f0,#cdb893);border-radius:6px}
+  .rangebar .pin{position:absolute;top:6px;transform:translateX(-50%);text-align:center}
+  .rangebar .dot{width:13px;height:13px;border-radius:50%;background:var(--navy);margin:0 auto;border:2px solid #fff;box-shadow:0 0 0 1px var(--navy)}
+  .rangebar .pin.agent .dot{background:var(--accent);box-shadow:0 0 0 1px var(--accent2)}
+  .rangebar .pin .lab{font-size:10.5px;color:var(--slate);white-space:nowrap;margin-top:3px}
+  .rangebar .pin .amt{font-size:11px;font-weight:700;color:var(--ink)}
+  .rangebar .scale{display:flex;justify-content:space-between;font-size:11px;color:var(--slate);margin:0 8px}
+  /* table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);background:var(--card)}
+  table{border-collapse:collapse;width:100%;font-size:13px;min-width:760px}
+  th,td{padding:10px 11px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}
+  th{background:var(--navy);color:#fff;font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.03em;cursor:pointer;position:sticky;top:0}
+  th:first-child,td:first-child{text-align:left;white-space:normal;min-width:150px}
+  th.sortable:hover{background:var(--navy2)}
+  tbody tr:hover{background:#f7fafc}
+  tr.subject{background:#fcf7ef;font-weight:600}
+  tr.subject:hover{background:#faf2e4}
+  .pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;font-weight:600}
+  .pill.pool{background:#e7f1ff;color:var(--blue)}
+  .pill.reno{background:#eaf6ef;color:var(--good)}
+  .pill.flag{background:#fbeee6;color:var(--warn)}
+  .pill.full{background:#e6f4ec;color:var(--good);border:1px solid #bfe3cd}
+  .pill.part{background:#eef3f9;color:#3a5a7d}
+  .pill.ctx{background:#f0f0f3;color:#7a7f8a}
+  .pill.subj{background:#fcf2e0;color:var(--accent2)}
+  .mtick{font-weight:800;font-size:12px;margin-left:3px}
+  .mtick.ok{color:var(--good)} .mtick.bad{color:#c0563a}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{background:var(--chip);color:#3a4a5e;border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;font-weight:600}
+  .chip.on{background:#e6f4ec;color:var(--good);border-color:#bfe3cd}
+  /* bars chart */
+  .ppsf-row{display:grid;grid-template-columns:160px 1fr 64px;align-items:center;gap:10px;margin:7px 0}
+  .ppsf-row .nm{font-size:12.5px;color:var(--ink)}
+  .ppsf-row .barbg{background:#eef2f7;border-radius:6px;height:20px;position:relative;overflow:hidden}
+  .ppsf-row .fill{height:100%;border-radius:6px;background:linear-gradient(90deg,#8fb0d6,#3c6ba5)}
+  .ppsf-row .fill.pool{background:linear-gradient(90deg,#9dbef0,#2f6db5)}
+  .ppsf-row .fill.subj{background:linear-gradient(90deg,#d8b277,var(--accent2))}
+  .ppsf-row .amt{font-size:12.5px;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+  /* interactive grid */
+  .controls{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px;background:var(--card);
+    border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow)}
+  .ctrl label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:var(--ink)}
+  .ctrl label .out{color:var(--accent2);font-variant-numeric:tabular-nums}
+  .ctrl input[type=range]{width:100%;margin-top:7px;accent-color:var(--accent)}
+  .ctrl .hint{font-size:11.5px;color:var(--slate);margin-top:2px}
+  .reconcile{margin-top:16px;background:var(--navy);color:#fff;border-radius:12px;padding:16px 20px;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+  .reconcile .lab{font-size:13px;color:#c8d4e1;text-transform:uppercase;letter-spacing:.06em}
+  .reconcile .v{font-size:30px;font-weight:740;font-variant-numeric:tabular-nums}
+  .reconcile .v small{font-size:14px;color:#aebfd0;font-weight:600}
+  /* callout */
+  .callout{background:#fcf7ef;border:1px solid #ecdcc2;border-left:4px solid var(--accent);
+    border-radius:10px;padding:14px 16px;font-size:14px}
+  .callout h3{color:var(--accent2);margin-bottom:5px}
+  .note{background:#fdf6f1;border:1px solid #eddacd;border-radius:10px;padding:12px 15px;font-size:13px;color:#6a4a38}
+  ul.clean{margin:.4em 0;padding-left:1.15em}
+  ul.clean li{margin:.28em 0;font-size:14px}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .src-list{font-size:12.5px;color:var(--slate);line-height:1.7}
+  .src-list a{color:var(--blue);text-decoration:none}
+  .src-list a:hover{text-decoration:underline}
+  footer{padding:24px 0 50px;color:var(--slate);font-size:12px}
+  .disc{background:#eef1f5;border-radius:10px;padding:14px 16px;font-size:12px;color:#54637a}
+  @media(max-width:760px){
+    .summary{grid-template-columns:1fr}
+    .g4,.g3,.g2,.controls,.twocol{grid-template-columns:1fr}
+    header h1{font-size:24px}.prep{text-align:left}
+    .ppsf-row{grid-template-columns:120px 1fr 56px}
+  }
+</style>
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div>
+      <div class="brand">Josh Hanoud Team &middot; eXp Realty</div>
+      <h1>52 Buttonworth Dr</h1>
+      <div class="sub">Comparative Market Analysis &middot; Palm Coast, FL 32137 &middot; Flagler County &middot; Parcel 07-11-31-7035-00680-0260</div>
+      <span class="tag">Pre-listing valuation &middot; Prepared June 18, 2026</span>
+    </div>
+    <div class="prep">
+      <span>Prepared for <b>Henriette Harding</b></span>
+      <span>Prepared by <b>Josh Hanoud</b></span>
+      <span>Josh Hanoud Team / eXp Realty</span>
+      <span class="xs">Broker's opinion of value &mdash; not an appraisal</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="summary">
+    <div>
+      <div class="eyebrow">Estimated market value</div>
+      <div class="bignum">$355,000 <small>&plusmn; $10k</small></div>
+      <div class="range-line">Supported value range <b>$340,000 &ndash; $372,000</b>. This home is <b>2,012 heated sq ft</b>, so the value works out to roughly <b>$176/sq ft</b>.</div>
+      <p class="small muted" style="margin-top:8px">This is a freshwater <b>lakefront</b> home with a dock, on a non-HOA Section&nbsp;35 lot. Seven automated models cluster tightly around <b>$352,000</b>, and the best-matched recent sales of similar-size, no-pool homes support the high end. The lake and dock add value over a typical interior lot; condition (a long-held home) is the main swing factor.</p>
+    </div>
+    <div>
+      <div class="eyebrow">Recommended pricing strategy</div>
+      <div class="tiers">
+        <div class="tier"><span class="lab">Aggressive<span>fast sale, at the AVM cluster</span></span><b>$344,900</b></div>
+        <div class="tier rec"><span class="lab">Recommended list<span>room to negotiate to a ~$355k value</span></span><b>$359,900</b></div>
+        <div class="tier"><span class="lab">Premium<span>top of the comparable evidence; watch days on market</span></span><b>$374,900</b></div>
+      </div>
+      <p class="xs muted" style="margin-top:8px">Interior 3/2 ~2,000 sq ft homes in average condition are selling in the low-$300s; well-finished ones reach the high-$300s. The freshwater lake + dock and a tight AVM cluster at $352k support listing in the high-$350s with negotiating room.</p>
+    </div>
+  </div>
+<!-- JHT Market Timing component. Self-contained, inherits the report theme. Insert AFTER
+     the recommended-pricing section (before active competition). Replace {"windowDays": 180, "soldCount": 59, "medianDOM": 45, "listToSale": 97.0, "monthsInventory": 3.6, "tiers": [{"label": "Aggressive", "price": 344900, "dom": "under ~25 days", "note": "At/below the AVM cluster and the mid-range solds; built for a fast, clean sale. Best choice if the home shows dated."}, {"label": "At market", "price": 359900, "dom": "~30-45 days", "note": "In line with the AVM cluster and the better-condition lakefront-area solds, with room to negotiate to a ~$352-355k net value."}, {"label": "Premium", "price": 374900, "dom": "60+ days", "note": "At the top of the comparable evidence; expect longer exposure and a likely price reduction unless condition and the lake/dock fully justify it."}]}:
+     {"windowDays":90,"soldCount":11,"medianDOM":34,"listToSale":97.1,"monthsInventory":4.8,
+      "tiers":[
+        {"label":"Aggressive","price":379900,"dom":"under ~20 days","note":"Priced below the matched solds; built for multiple offers and a fast close."},
+        {"label":"At market","price":389900,"dom":"~25-40 days","note":"In line with the adjusted sold comps; balanced speed and net."},
+        {"label":"Premium","price":405000,"dom":"60+ days","note":"Above the sold evidence; expect longer exposure and a likely price reduction if the market doesn't move up."}]}
+     Compute medianDOM and listToSale from the SOLD set actually pulled; monthsInventory =
+     current matched actives / (solds per month over the window). Tier DOM guidance comes
+     from how solds at each price position performed (above/below the adjusted value). -->
+<section id="timing">
+  <style>
+    #timing .tm-stats{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+    #timing .tm-stat{flex:1 1 150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;text-align:center;box-shadow:var(--shadow)}
+    #timing .tm-stat .lab{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+    #timing .tm-stat .v{font-size:21px;font-weight:800;color:var(--navy);margin-top:4px;font-variant-numeric:tabular-nums}
+    #timing .tm-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);background:var(--card)}
+    #timing .tm-table{border-collapse:collapse;width:100%;min-width:0;table-layout:fixed;font-size:13.5px}
+    #timing .tm-table th,#timing .tm-table td{white-space:normal;text-align:left;min-width:0;position:static;cursor:default;font-variant-numeric:normal;background:none}
+    #timing .tm-table th{background:var(--navy);color:#fff;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px}
+    #timing .tm-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink)}
+    #timing .tm-table tr:last-child td{border-bottom:none}
+    #timing .tm-table col.c1{width:15%}
+    #timing .tm-table col.c2{width:14%}
+    #timing .tm-table col.c3{width:21%}
+    #timing .tm-table col.c4{width:50%}
+    #timing .tm-table .price{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+    #timing .tm-table .dom{font-weight:700;color:var(--accent2)}
+    #timing .tm-table .tm-tier{font-weight:700;display:table-cell;border:none;border-radius:0}
+    #timing .tm-note{color:var(--slate)}
+    @media (max-width:640px){#timing .tm-table{table-layout:auto;min-width:560px}}
+  </style>
+  <div class="eyebrow">Price vs. time</div>
+  <h2>The tradeoff every seller asks about</h2>
+  <p class="small muted" id="tmIntro"></p>
+  <div class="tm-stats" id="tmStats"></div>
+  <div class="tm-wrap"><table class="tm-table"><colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup><thead><tr><th>Strategy</th><th>List price</th><th>Expected time on market</th><th>What to expect</th></tr></thead><tbody id="tmBody"></tbody></table></div>
+  <p class="xs muted" style="margin-top:8px">Days-on-market figures come from how the matched sold comps actually performed relative to their adjusted values over this window. Market conditions can change; this is a planning guide, not a guarantee.</p>
+  <script>
+  (function(){
+    var t={"windowDays": 180, "soldCount": 59, "medianDOM": 45, "listToSale": 97.0, "monthsInventory": 3.6, "tiers": [{"label": "Aggressive", "price": 344900, "dom": "under ~25 days", "note": "At/below the AVM cluster and the mid-range solds; built for a fast, clean sale. Best choice if the home shows dated."}, {"label": "At market", "price": 359900, "dom": "~30-45 days", "note": "In line with the AVM cluster and the better-condition lakefront-area solds, with room to negotiate to a ~$352-355k net value."}, {"label": "Premium", "price": 374900, "dom": "60+ days", "note": "At the top of the comparable evidence; expect longer exposure and a likely price reduction unless condition and the lake/dock fully justify it."}]};
+    var f=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+    document.getElementById('tmIntro').textContent='Based on the '+t.soldCount+' matched sales in the last '+t.windowDays+' days: homes like this one took a median of '+t.medianDOM+' days to go under contract and closed at '+t.listToSale+'% of list price on average.';
+    var stats=[['Median days to contract',t.medianDOM+' days'],['Sold-to-list ratio',t.listToSale+'%'],['Months of inventory',t.monthsInventory]];
+    var sEl=document.getElementById('tmStats');
+    stats.forEach(function(s){sEl.insertAdjacentHTML('beforeend','<div class="tm-stat"><div class="lab">'+s[0]+'</div><div class="v">'+s[1]+'</div></div>');});
+    var b=document.getElementById('tmBody');
+    t.tiers.forEach(function(x){b.insertAdjacentHTML('beforeend','<tr><td class="tm-tier">'+x.label+'</td><td class="price">'+f(x.price)+'</td><td class="dom">'+x.dom+'</td><td class="tm-note">'+x.note+'</td></tr>');});
+  })();
+  </script>
+</section>
+<!-- JHT Seller-Net component. Reusable, self-contained (own <style> + <script>).
+     Uses the report's CSS variables (--navy, --accent, --line, --card, --slate, --warn)
+     so it inherits each report's theme automatically. Insert this <section> immediately
+     BEFORE the <section> that contains <div class="eyebrow">The property</div>.
+     Replace 359900 with the recommended list price (digits only, e.g. 424900). -->
+<section id="sellernet">
+  <style>
+    #sellernet .sn-inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+    #sellernet .sn-field{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+    #sellernet .sn-field > label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px}
+    #sellernet .sn-field .sub{font-size:11.5px;color:var(--slate);font-weight:500}
+    #sellernet input[type=number],#sellernet input[type=text]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-variant-numeric:tabular-nums;color:var(--ink);background:#fff;font-family:inherit}
+    #sellernet input[type=range]{width:100%;margin-top:4px;accent-color:var(--accent)}
+    #sellernet .sn-misc{display:grid;grid-template-columns:1fr 128px;gap:8px}
+    #sellernet .sn-out{float:right;color:var(--accent2);font-weight:700;font-variant-numeric:tabular-nums}
+    #sellernet .sn-table{width:100%;border-collapse:collapse;font-size:13.5px}
+    #sellernet .sn-table td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+    #sellernet .sn-table td:first-child{text-align:left;color:var(--slate)}
+    #sellernet .sn-table tr.tot td{border-top:2px solid var(--navy);border-bottom:none;font-weight:700;color:var(--navy);font-size:15px;padding-top:12px}
+    #sellernet .sn-neg{color:var(--warn)}
+  </style>
+  <div class="eyebrow">Estimated seller net</div>
+  <h2>What you walk away with</h2>
+  <p class="small muted">Set the sale price and drag the buyer-concession slider, then fill in your mortgage payoff and any case-by-case items. Net to seller updates live. Standard Florida costs are built in: brokerage 4% + $300, title insurance $575 + $500 per $100k, and doc stamps 0.7%.</p>
+  <div class="sn-inputs">
+    <div class="sn-field">
+      <label>Sale price</label>
+      <input type="number" id="snPrice" value="359900" step="1000" min="0">
+    </div>
+    <div class="sn-field">
+      <label>Estimated buyer concessions <span class="sn-out" id="snConcOut">4% &middot; $0</span></label>
+      <input type="range" id="snConc" min="0" max="8" step="0.5" value="4">
+      <div class="sub">Seller credit toward buyer closing costs (0&ndash;8%, default 4%).</div>
+    </div>
+    <div class="sn-field">
+      <label>Mortgage payoff <span class="sub">(agent fills in)</span></label>
+      <input type="number" id="snPayoff" placeholder="0" step="1000" min="0">
+    </div>
+    <div class="sn-field">
+      <label>Misc. item 1 <span class="sub">(agent fills in)</span></label>
+      <div class="sn-misc"><input type="text" id="snM1L" placeholder="label (e.g. survey)"><input type="number" id="snM1V" placeholder="0" step="100"></div>
+    </div>
+    <div class="sn-field">
+      <label>Misc. item 2 <span class="sub">(agent fills in)</span></label>
+      <div class="sn-misc"><input type="text" id="snM2L" placeholder="label (e.g. home warranty)"><input type="number" id="snM2V" placeholder="0" step="100"></div>
+    </div>
+    <div class="sn-field">
+      <label>Misc. item 3 <span class="sub">(agent fills in)</span></label>
+      <div class="sn-misc"><input type="text" id="snM3L" placeholder="label (e.g. HOA estoppel)"><input type="number" id="snM3V" placeholder="0" step="100"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px;padding:4px 18px">
+    <table class="sn-table"><tbody id="snBody"></tbody></table>
+  </div>
+  <div class="reconcile" style="margin-top:16px">
+    <span class="lab">Estimated net to seller</span>
+    <span class="v" id="snNet">$0</span>
+  </div>
+  <p class="xs muted" style="margin-top:8px">Estimate only. Actual net depends on final contract terms, prorations, liens, HOA/tax prorations, and closing date. Confirm figures with your closing agent.</p>
+  <script>
+  (function(){
+    var f=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+    function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+    function lbl(id,def){var v=document.getElementById(id).value.trim();return v||def;}
+    function calc(){
+      var price=num('snPrice'), concPct=num('snConc');
+      var commission=Math.max(price*0.04,4000)+300;
+      var conc=price*(concPct/100);
+      var title=575+500*((price-100000)/100000); if(title<575)title=575;
+      var doc=price*0.007;
+      var payoff=num('snPayoff'), m1=num('snM1V'), m2=num('snM2V'), m3=num('snM3V');
+      document.getElementById('snConcOut').innerHTML=concPct+'% &middot; '+f(conc);
+      var net=price-commission-conc-title-doc-payoff-m1-m2-m3;
+      var rows=[
+        ['Sale price',price,'pos'],
+        ['Brokerage commission (4% + $300)',-commission,'cost'],
+        ['Buyer concessions ('+concPct+'%)',-conc,'cost'],
+        ['Title insurance',-title,'cost'],
+        ['Doc stamps (0.7%)',-doc,'cost'],
+        ['Mortgage payoff',-payoff,'hide'],
+        [lbl('snM1L','Misc. item 1'),-m1,'hide'],
+        [lbl('snM2L','Misc. item 2'),-m2,'hide'],
+        [lbl('snM3L','Misc. item 3'),-m3,'hide']
+      ];
+      var html='';
+      rows.forEach(function(r){
+        if(r[2]==='hide' && r[1]===0) return;
+        var amt=(r[1]<0?'−'+f(Math.abs(r[1])):f(r[1]));
+        html+='<tr><td>'+r[0]+'</td><td class="'+(r[1]<0?'sn-neg':'')+'">'+amt+'</td></tr>';
+      });
+      html+='<tr class="tot"><td>Estimated net to seller</td><td>'+f(net)+'</td></tr>';
+      document.getElementById('snBody').innerHTML=html;
+      document.getElementById('snNet').textContent=f(net);
+    }
+    ['snPrice','snConc','snPayoff','snM1L','snM1V','snM2L','snM2V','snM3L','snM3V'].forEach(function(id){
+      document.getElementById(id).addEventListener('input',calc);
+    });
+    calc();
+  })();
+  </script>
+</section>
+<!-- JHT Dynamic Seller-Net Grid. Replaces the old static $5,000-increment grid.
+     Self-contained; REQUIRES the interactive seller-net component (section id="sellernet")
+     to be present EARLIER in the document - it reads the live inputs (#snPrice, #snConc,
+     #snPayoff, #snM1V/2/3) and recomputes every row whenever they change. Ladder anchors
+     to the current sale price: top = sale price rounded UP to the nearest $10,000, then
+     six $5,000 steps down (team method). No placeholders to replace. -->
+<section id="sngrid">
+  <style>
+    #sngrid .sg-table{width:100%;max-width:560px;min-width:0;border-collapse:collapse;font-size:13.5px;table-layout:fixed}
+    #sngrid .sg-table th,#sngrid .sg-table td{white-space:normal;min-width:0;position:static;cursor:default}
+    #sngrid .sg-table th{background:var(--navy);color:#fff;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:9px 12px;text-align:right}
+    #sngrid .sg-table th:first-child{text-align:left}
+    #sngrid .sg-table td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;color:var(--ink)}
+    #sngrid .sg-table td:first-child{text-align:left}
+    #sngrid .sg-table tr.cur td{background:var(--chip);font-weight:700;color:var(--navy)}
+    #sngrid .sg-table tr.cur td:first-child::after{content:" \2190 your price";font-size:11px;color:var(--accent2);font-weight:600}
+    #sngrid .sg-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);background:var(--card);max-width:560px}
+    #sngrid .sg-note{margin-top:8px}
+  </style>
+  <div class="eyebrow">Estimated seller net at a glance</div>
+  <h2>Net proceeds across the price ladder</h2>
+  <p class="small muted">This grid follows the calculator above. Change the sale price, concession slider, payoff, or any line item up there and every row here recomputes.</p>
+  <div class="sg-wrap"><table class="sg-table"><thead><tr><th>Sale price</th><th>Costs &amp; payoff</th><th>Seller net</th></tr></thead><tbody id="sgBody"></tbody></table></div>
+  <p class="xs muted sg-note" id="sgNote"></p>
+  <script>
+  (function(){
+    var ids=['snPrice','snConc','snPayoff','snM1V','snM2V','snM3V'];
+    if(ids.slice(0,2).some(function(id){return !document.getElementById(id);})) return; // requires interactive section
+    var f=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+    function num(id){var el=document.getElementById(id);if(!el)return 0;var v=parseFloat(el.value);return isNaN(v)?0:v;}
+    function render(){
+      var price=num('snPrice'), concPct=num('snConc');
+      var payoff=num('snPayoff'), misc=num('snM1V')+num('snM2V')+num('snM3V');
+      var top=Math.ceil(price/10000)*10000;
+      var html='';
+      for(var i=0;i<7;i++){
+        var p=top-i*5000; if(p<=0)break;
+        var commission=Math.max(p*0.04,4000)+300;
+        var conc=p*(concPct/100);
+        var title=Math.max(575+500*((p-100000)/100000),575);
+        var doc=p*0.007;
+        var costs=commission+conc+title+doc+payoff+misc;
+        var net=p-costs;
+        var cur=Math.abs(p-price)<2500?' class="cur"':'';
+        html+='<tr'+cur+'><td>'+f(p)+'</td><td>'+f(costs)+'</td><td><b>'+f(net)+'</b></td></tr>';
+      }
+      document.getElementById('sgBody').innerHTML=html;
+      var bits=['brokerage 4% + $300','buyer concessions '+concPct+'%','title insurance (FL sliding scale)','doc stamps 0.7%'];
+      if(payoff>0)bits.push('mortgage payoff '+f(payoff));
+      if(misc>0)bits.push('other items '+f(misc));
+      document.getElementById('sgNote').textContent='Each row includes: '+bits.join(', ')+'. Estimate only; confirm final figures with your closing agent.';
+    }
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener('input',render);});
+    render();
+  })();
+  </script>
+</section>
+
+<section>
+  <div class="eyebrow">The property</div>
+  <h2>What we are valuing</h2>
+  <p class="muted small">Facts below are confirmed against the Flagler County Property Appraiser record (parcel 07-11-31-7035-00680-0260), the authoritative source for heated/cooled living area.</p>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card stat"><div class="k">Heated / cooled area</div><div class="v">2,012 sq ft</div></div>
+    <div class="card stat"><div class="k">Beds / baths</div><div class="v">3 / 2</div></div>
+    <div class="card stat"><div class="k">Year built</div><div class="v">1998 (eff. 2007)</div></div>
+    <div class="card stat"><div class="k">Garage</div><div class="v">2-car (400 sf)</div></div>
+    <div class="card stat"><div class="k">Lot size</div><div class="v">10,450 sq ft (0.24 ac)</div></div>
+    <div class="card stat"><div class="k">Pool</div><div class="v">None</div></div>
+    <div class="card stat"><div class="k">Waterfront</div><div class="v small" style="font-weight:600">Freshwater lakefront &middot; dock</div></div>
+    <div class="card stat"><div class="k">Construction</div><div class="v">Masonry / stucco</div></div>
+  </div>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card stat"><div class="k">Other finished / site features</div><div class="v small" style="font-weight:600">364 sf enclosed porch, 84 sf open porch, screen enclosure, storage bldg, dock, fenced</div></div>
+    <div class="card stat"><div class="k">2025 property taxes</div><div class="v">~$2,030</div></div>
+    <div class="card stat"><div class="k">Subdivision / section</div><div class="v small" style="font-weight:600">Palm Coast Section 35 &middot; no HOA &middot; homestead</div></div>
+  </div>
+  <div class="twocol" style="margin-top:14px">
+    <div class="callout">
+      <h3>Location &amp; lot</h3>
+      <ul class="clean">
+        <li><b>Freshwater lakefront</b> with a dock, verified on the satellite map. This is a freshwater lake (not a saltwater navigable canal), so it carries a modest premium over an interior lot, not the large premium of a C/F-section saltwater-canal home.</li>
+        <li>Single-story masonry/stucco home on a 0.24-acre lot in the non-HOA B/Pine-Lakes-area Section 35.</li>
+        <li>Homestead, long-term owner (held since the 1990s; 2024 deed was a $0 life-estate transfer, not an arm's-length sale).</li>
+      </ul>
+    </div>
+    <div class="callout">
+      <h3>Condition note</h3>
+      <ul class="clean">
+        <li>No renovation or permit history was provided with this request, and the home has been owner-held for many years.</li>
+        <li>The value range assumes <b>average-to-good</b> condition. If the interior is dated, lean toward the aggressive tier; if it has been updated, the lake/dock supports the premium tier.</li>
+        <li>Confirm roof, A/C, and water-heater ages before listing &mdash; these move buyers in this price tier.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Automated estimates (AVMs)</div>
+  <h2>What the algorithms say</h2>
+  <p class="muted small">Automated valuation models are a useful starting point, but they apply broad formulas and tend to under-credit waterfront. We show all seven for transparency, then reconcile against real sales. They cluster tightly here, which raises confidence in the band.</p>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card avm"><div class="src">Realtor.com RealEstimate</div><div class="val">$352,000</div><div class="note">Agent-entered from listing</div></div>
+    <div class="card avm"><div class="src">Collateral Analytics</div><div class="val">$338,000</div><div class="note">Agent-entered from listing</div></div>
+    <div class="card avm"><div class="src">Cotality (CoreLogic)</div><div class="val">$352,000</div><div class="note">Agent-entered from listing</div></div>
+    <div class="card avm"><div class="src">Quantarium</div><div class="val">$369,523</div><div class="note">Agent-entered from listing</div></div>
+    <div class="card avm"><div class="src">Realist RealAVM</div><div class="val">$352,000</div><div class="note">$326,400 &ndash; $377,600 &middot; conf 90 (live)</div></div>
+    <div class="card avm"><div class="src">RPR (RVM)</div><div class="val">$354,620</div><div class="note">$315,600 &ndash; $393,600 (live)</div></div>
+    <div class="card avm"><div class="src">Zillow (Zestimate)</div><div class="val">$345,700</div><div class="note">$315,000 &ndash; $373,000; SF correct (2,012) (live)</div></div>
+    <div class="card avm agent"><div class="src">Agent reconciled value</div><div class="val">$355,000</div><div class="note">From matched comps + lake/dock</div></div>
+  </div>
+  <div class="rangebar card" style="margin-top:14px;padding:14px 18px 20px">
+    <div class="small muted">Where each estimate falls (seven AVMs + reconciled value)</div>
+    <div class="track" id="avmTrack">
+      <div class="pin" style="left:18%"><div class="dot"></div><div class="lab">Collateral</div><div class="amt">$338k</div></div>
+      <div class="pin" style="left:46%"><div class="dot"></div><div class="lab">Zillow</div><div class="amt">$345.7k</div></div>
+      <div class="pin" style="left:55%"><div class="dot"></div><div class="lab">Realist/Cotality/Rltr</div><div class="amt">$352k</div></div>
+      <div class="pin" style="left:60%"><div class="dot"></div><div class="lab">RPR</div><div class="amt">$354.6k</div></div>
+      <div class="pin agent" style="left:62%"><div class="dot"></div><div class="lab">Reconciled</div><div class="amt">$355k</div></div>
+      <div class="pin" style="left:89%"><div class="dot"></div><div class="lab">Quantarium</div><div class="amt">$369.5k</div></div>
+      <div class="bar"></div>
+    </div>
+    <div class="scale"><span>$330k</span><span>$375k</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">MLS-verified market analysis</div>
+  <h2>The matched-sales picture &mdash; all three MLS searched</h2>
+  <p class="muted small">Comps were pulled live from all three MLS systems Josh has access to, then de-duplicated. Stellar MLS is the system of record for Palm Coast; realMLS and Citrus were searched in full and documented.</p>
+  <div class="chips" style="margin:12px 0 4px">
+    <span class="chip">Palm Coast citywide</span>
+    <span class="chip">Closed, last 180 days</span>
+    <span class="chip">3 bd / 2 ba</span>
+    <span class="chip">1,850&ndash;2,250 sq ft</span>
+    <span class="chip on">No pool</span>
+    <span class="chip on">2-car garage</span>
+    <span class="chip">Built 1988&ndash;2008</span>
+    <span class="chip">No HOA</span>
+    <span class="chip">Lot 0&ndash;0.25 ac</span>
+    <span class="chip">Saltwater canal / oceanfront excluded</span>
+  </div>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card stat"><div class="k">Stellar &mdash; matched closed</div><div class="v">59</div></div>
+    <div class="card stat"><div class="k">Stellar &mdash; active / pending</div><div class="v">35 / 21</div></div>
+    <div class="card stat"><div class="k">realMLS matched</div><div class="v">0</div></div>
+    <div class="card stat"><div class="k">Citrus matched</div><div class="v">0</div></div>
+  </div>
+  <div class="callout" style="margin-top:14px">
+    <h3>How the set was cleaned &amp; the three MLS searched</h3>
+    <ul class="clean">
+      <li><b>Stellar MLS (Matrix):</b> 59 matched closed sales in the last 180 days (35 active, 21 pending). This is the primary comp set.</li>
+      <li><b>realMLS / Flexmls (data-share):</b> searched live for Palm Coast. realMLS covers the Jacksonville/St.&nbsp;Johns, Daytona, Hernando and Space Coast boards; its Palm Coast entries are cross-listed higher-tier homes (pool homes, condos, new builds) that don't match this subject &mdash; <b>0</b> matched keepers.</li>
+      <li><b>Citrus County MLS (Matrix):</b> searched live. One Palm Coast listing total (a 4-bed / 3-bath, 2,483 sq ft home), which does not match the subject &mdash; <b>0</b> matched comps.</li>
+      <li>Excluded before any math: homes with pools, townhomes/condos, HOA/gated communities (Grand Haven, Cypress Knoll community-pool product), and oceanfront / saltwater-canal homes ($550k&ndash;$810k) that are not comparable to an interior freshwater-lakefront house.</li>
+    </ul>
+  </div>
+  <p class="muted small" style="margin-top:14px">Matched closed sales closest in size to the subject (2,012 sq ft). All match the subject on beds, baths, garage and pool, so feature adjustments are essentially zero and price-per-foot is the cleanest comparison.</p>
+  <div class="tablewrap" style="margin-top:10px">
+    <table>
+      <thead><tr><th>Matched sale (no pool, 2-car, 1988&ndash;2008, no HOA)</th><th>Sold price</th><th>Heated SF</th><th>$/SF</th><th>Built</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>59 Eric Dr</td><td>$372,000</td><td>2,026</td><td>$183.61</td><td>2002</td><td>Cypress Knoll, immaculate; DOM 57</td></tr>
+        <tr><td>4 Wainmont Pl</td><td>$383,500</td><td>2,189</td><td>$175.19</td><td>2004</td><td>Pine Lakes, custom/larger; DOM 102</td></tr>
+        <tr><td>70 Ponce Deleon Dr</td><td>$365,000</td><td>2,051</td><td>$177.96</td><td>2003</td><td>Upgraded; sold above list, DOM 4</td></tr>
+        <tr><td>4 Eastgate Ln</td><td>$360,000</td><td>2,147</td><td>$167.68</td><td>2004</td><td>Updated, larger; DOM 340</td></tr>
+        <tr><td>13 Unionin Ct</td><td>$340,000</td><td>2,039</td><td>$166.75</td><td>2007</td><td>Seminole Woods, cul-de-sac; DOM 38</td></tr>
+        <tr><td>44 Prattwood Ln</td><td>~$337,000</td><td>1,987</td><td>~$165</td><td>2001</td><td>Sec 24 (close of $337k list)</td></tr>
+        <tr><td>64 Belvedere Ln</td><td>~$325,000</td><td>2,020</td><td>~$156</td><td>2004</td><td>Belle Terre</td></tr>
+        <tr><td>8 Burning Sands Ln</td><td>~$302,000</td><td>1,917</td><td>~$153</td><td>1998</td><td><b>Section 35 &mdash; same section as subject</b></td></tr>
+        <tr><td>107 Beacon Mill Ln</td><td>~$300,000</td><td>2,020</td><td>~$144</td><td>2002</td><td>NW Palm Coast</td></tr>
+        <tr><td>16 Woodlyn Ln</td><td>~$300,000</td><td>2,034</td><td>~$143</td><td>1995</td><td>Sec 27</td></tr>
+        <tr><td>34 Roxanne Ln</td><td>~$293,000</td><td>2,079</td><td>~$137</td><td>2005</td><td>Lower-finish bracket</td></tr>
+        <tr class="subject"><td>52 Buttonworth Dr (subject)</td><td>&mdash;</td><td>2,012</td><td>~$176 target</td><td>1998</td><td>Freshwater lakefront + dock</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="xs muted" style="margin-top:8px">Source: Stellar MLS (Matrix), closed sales 12/2025&ndash;06/2026, accessed in-session 06/18/2026. Five comps carry MLS-reported close prices; the rest are shown at their list price (est. close &asymp; 97% in this market) and used for the lower-finish bracket. realMLS and Citrus searched live with the same criteria (0 matched).</p>
+</section>
+<!-- JHT Comp Map component. Self-contained except Leaflet (CDN). Uses the report's CSS
+     variables so it inherits the theme. Insert this <section> immediately AFTER the
+     matched-comp table section. Replace [{"lat": 29.5934893, "lng": -81.2556541, "label": "52 Buttonworth Dr", "status": "Subject", "detail": "The subject &middot; freshwater lakefront + dock, 2,012 SF"}, {"lat": 29.591, "lng": -81.252, "label": "8 Burning Sands Ln", "status": "Sold", "detail": "Sec 35 (same section) &middot; 1,917 SF &middot; ~$152/SF"}, {"lat": 29.548, "lng": -81.258, "label": "70 Ponce Deleon Dr", "status": "Sold", "detail": "Sold $365,000 &middot; $177.96/SF &middot; 2,051 SF &middot; DOM 4"}, {"lat": 29.508, "lng": -81.196, "label": "59 Eric Dr", "status": "Sold", "detail": "Sold $372,000 &middot; $183.61/SF &middot; 2,026 SF (Cypress Knoll)"}, {"lat": 29.506, "lng": -81.199, "label": "4 Eastgate Ln", "status": "Sold", "detail": "Sold $360,000 &middot; $167.68/SF &middot; 2,147 SF"}, {"lat": 29.541, "lng": -81.272, "label": "4 Wainmont Pl", "status": "Sold", "detail": "Sold $383,500 &middot; $175.19/SF &middot; 2,189 SF (Pine Lakes, custom)"}, {"lat": 29.452, "lng": -81.211, "label": "13 Unionin Ct", "status": "Sold", "detail": "Sold $340,000 &middot; $166.75/SF &middot; 2,039 SF &middot; DOM 38"}, {"lat": 29.518, "lng": -81.236, "label": "44 Prattwood Ln", "status": "Sold", "detail": "~$337,000 &middot; ~$165/SF &middot; 1,987 SF"}, {"lat": 29.566, "lng": -81.232, "label": "64 Belvedere Ln", "status": "Sold", "detail": "~$325,000 &middot; ~$156/SF &middot; 2,020 SF (Belle Terre)"}, {"lat": 29.528, "lng": -81.247, "label": "16 Woodlyn Ln", "status": "Sold", "detail": "~$300,000 &middot; ~$143/SF &middot; 2,034 SF"}] with a JSON array:
+     [{"lat":29.51,"lng":-81.22,"label":"17 Pinelark Ln","status":"Subject","detail":"The subject property"},
+      {"lat":...,"lng":...,"label":"12 Pine Cedar Dr","status":"Sold","detail":"Sold $372,000 &middot; $214/SF adj &middot; closed 04/18/2026"},
+      ... status is one of Subject | Sold | Pending | Active]
+     Get lat/lng from the MLS listing record or the county GIS parcel point; verify the
+     subject pin against the GIS map already pulled for canal screening. -->
+<section id="compmap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <style>
+    #compmap .cm-wrap{border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    #compmap #cmMap{height:440px;width:100%;background:var(--chip)}
+    #compmap .cm-legend{display:flex;flex-wrap:wrap;gap:14px 22px;padding:12px 16px;background:var(--card);border-top:1px solid var(--line);font-size:13px;color:var(--slate)}
+    #compmap .cm-legend .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+    #compmap .leaflet-popup-content{font-family:inherit;font-size:13px;line-height:1.45}
+    #compmap .leaflet-popup-content b{color:var(--navy)}
+  </style>
+  <div class="eyebrow">Comp map</div>
+  <h2>Where every comp sits</h2>
+  <p class="small muted">Comps mapped against the subject. Comp pins are placed at approximate neighborhood locations (exact parcels verified in the MLS record); the subject pin is exact. Comps were screened on the satellite map, not just MLS flags, so saltwater-canal, HOA, and barrier-island properties that don't match the subject were removed before any numbers were run.</p>
+  <div class="cm-wrap">
+    <div id="cmMap"></div>
+    <div class="cm-legend" id="cmLegend"></div>
+  </div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  (function(){
+    var data = [{"lat": 29.5934893, "lng": -81.2556541, "label": "52 Buttonworth Dr", "status": "Subject", "detail": "The subject &middot; freshwater lakefront + dock, 2,012 SF"}, {"lat": 29.591, "lng": -81.252, "label": "8 Burning Sands Ln", "status": "Sold", "detail": "Sec 35 (same section) &middot; 1,917 SF &middot; ~$152/SF"}, {"lat": 29.548, "lng": -81.258, "label": "70 Ponce Deleon Dr", "status": "Sold", "detail": "Sold $365,000 &middot; $177.96/SF &middot; 2,051 SF &middot; DOM 4"}, {"lat": 29.508, "lng": -81.196, "label": "59 Eric Dr", "status": "Sold", "detail": "Sold $372,000 &middot; $183.61/SF &middot; 2,026 SF (Cypress Knoll)"}, {"lat": 29.506, "lng": -81.199, "label": "4 Eastgate Ln", "status": "Sold", "detail": "Sold $360,000 &middot; $167.68/SF &middot; 2,147 SF"}, {"lat": 29.541, "lng": -81.272, "label": "4 Wainmont Pl", "status": "Sold", "detail": "Sold $383,500 &middot; $175.19/SF &middot; 2,189 SF (Pine Lakes, custom)"}, {"lat": 29.452, "lng": -81.211, "label": "13 Unionin Ct", "status": "Sold", "detail": "Sold $340,000 &middot; $166.75/SF &middot; 2,039 SF &middot; DOM 38"}, {"lat": 29.518, "lng": -81.236, "label": "44 Prattwood Ln", "status": "Sold", "detail": "~$337,000 &middot; ~$165/SF &middot; 1,987 SF"}, {"lat": 29.566, "lng": -81.232, "label": "64 Belvedere Ln", "status": "Sold", "detail": "~$325,000 &middot; ~$156/SF &middot; 2,020 SF (Belle Terre)"}, {"lat": 29.528, "lng": -81.247, "label": "16 Woodlyn Ln", "status": "Sold", "detail": "~$300,000 &middot; ~$143/SF &middot; 2,034 SF"}];
+    function init(){
+      if(typeof L==='undefined'){setTimeout(init,300);return;}
+      var cs=getComputedStyle(document.documentElement);
+      var col=function(v,fb){var c=cs.getPropertyValue(v).trim();return c||fb;};
+      var colors={Subject:col('--accent','#c9a227'),Sold:col('--navy','#0f2a4a'),Pending:col('--warn','#b4541e'),Active:col('--good','#1f7a5c')};
+      var map=L.map('cmMap',{scrollWheelZoom:false});
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+      var bounds=[];
+      data.forEach(function(p){
+        var isSubj=p.status==='Subject';
+        var m=L.circleMarker([p.lat,p.lng],{radius:isSubj?11:8,color:isSubj?colors.Subject:'#ffffff',weight:isSubj?3:2,fillColor:colors[p.status]||'#888',fillOpacity:0.95}).addTo(map);
+        m.bindPopup('<b>'+p.label+'</b><br>'+p.status+(p.detail?('<br>'+p.detail):''));
+        if(isSubj){m.bindTooltip('Subject',{permanent:true,direction:'top',offset:[0,-10]});}
+        bounds.push([p.lat,p.lng]);
+      });
+      if(bounds.length)map.fitBounds(bounds,{padding:[36,36]});
+      var lg=document.getElementById('cmLegend'),order=['Subject','Sold','Pending','Active'];
+      order.forEach(function(s){
+        if(!data.some(function(p){return p.status===s;}))return;
+        lg.insertAdjacentHTML('beforeend','<span><span class="dot" style="background:'+(colors[s]||'#888')+'"></span>'+(s==='Subject'?'Subject property':s+' comps')+'</span>');
+      });
+    }
+    if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+  })();
+  </script>
+</section>
+
+<section>
+  <div class="eyebrow">Active / Pending / Sold</div>
+  <h2>Where the market is heading</h2>
+  <p class="muted small">The JHT method reads all three buckets, applying the average price-per-foot to the subject's 2,012 sq ft. The full matched set spans a wide $/SF range because condition and finish vary; the subject's lake/dock and the AVM cluster support the upper-middle.</p>
+  <div class="tablewrap" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Bucket (Stellar, matched)</th><th>#</th><th>Low-3 $/SF &rarr; value</th><th>Overall $/SF &rarr; value</th><th>High-3 $/SF &rarr; value</th></tr></thead>
+      <tbody>
+        <tr><td style="text-align:left"><b>Sold</b> (180 days)</td><td>59</td><td>$141.3 &rarr; $284,000</td><td><b>$160.8 &rarr; $323,500</b></td><td>$178.9 &rarr; $360,000</td></tr>
+        <tr><td style="text-align:left"><b>Pending</b> (under contract)</td><td>21</td><td>&mdash;</td><td><b>market firm</b></td><td>&mdash;</td></tr>
+        <tr><td style="text-align:left"><b>Active</b> (competition)</td><td>35</td><td>asking $280k</td><td><b>~$350k median ask</b></td><td>asking $480k+</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="xs muted" style="margin-top:8px">The sold "overall" leans on the full 11-comp blended set including dated/lower-finish homes; the reconciled value below credits the freshwater lake + dock and the seven-AVM cluster, landing above the raw sold mean.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Price per square foot</div>
+  <h2>The $/SF picture</h2>
+  <p class="muted small">Price per heated square foot for the matched no-pool comps. Well-finished homes cluster $167&ndash;$184/SF; dated/lower-finish ones run $137&ndash;$157. The subject is positioned near the upper-middle for the lake and dock.</p>
+  <div class="card" style="margin-top:14px">
+    <div class="ppsf-row"><div class="nm">59 Eric Dr</div><div class="barbg"><div class="fill" style="width:99%"></div></div><div class="amt">$184</div></div>
+    <div class="ppsf-row"><div class="nm">70 Ponce Deleon Dr</div><div class="barbg"><div class="fill" style="width:96%"></div></div><div class="amt">$178</div></div>
+    <div class="ppsf-row"><div class="nm">52 Buttonworth (subject target)</div><div class="barbg"><div class="fill subj" style="width:95%"></div></div><div class="amt">$176</div></div>
+    <div class="ppsf-row"><div class="nm">4 Wainmont Pl</div><div class="barbg"><div class="fill" style="width:95%"></div></div><div class="amt">$175</div></div>
+    <div class="ppsf-row"><div class="nm">4 Eastgate Ln</div><div class="barbg"><div class="fill" style="width:90%"></div></div><div class="amt">$168</div></div>
+    <div class="ppsf-row"><div class="nm">13 Unionin Ct</div><div class="barbg"><div class="fill" style="width:89%"></div></div><div class="amt">$167</div></div>
+    <div class="ppsf-row"><div class="nm">8 Burning Sands (Sec 35)</div><div class="barbg"><div class="fill" style="width:81%"></div></div><div class="amt">$153</div></div>
+    <div class="ppsf-row"><div class="nm">16 Woodlyn Ln</div><div class="barbg"><div class="fill" style="width:76%"></div></div><div class="amt">$143</div></div>
+  </div>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card stat"><div class="k">Well-finished comps, median</div><div class="v">$176 / sf</div></div>
+    <div class="card stat"><div class="k">Full matched set, median</div><div class="v">$165 / sf</div></div>
+    <div class="card stat"><div class="k">Subject at $176/sf</div><div class="v">$354,000</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">The adjustment model</div>
+  <h2>Adjusting each sale to match this home</h2>
+  <p class="muted small">Because every matched comp is a 3-bed / 2-bath, 2-car, no-pool home like the subject, the JHT feature adjustments (bedroom $5,000, full bath $9,000, garage bay $10,000, pool $20,000 in the $250k&ndash;$500k band) net to roughly zero. The real differences are <b>size</b> (handled by price-per-foot), <b>condition/finish</b>, and the subject's <b>freshwater lake + dock</b>.</p>
+  <div class="tablewrap" style="margin-top:16px">
+    <table>
+      <thead><tr><th>Comp</th><th>Sold price</th><th>SF vs subject</th><th>Feature adj.</th><th>Condition / location</th><th>Adjusted value (to subject)</th></tr></thead>
+      <tbody>
+        <tr><td>59 Eric Dr</td><td>$372,000</td><td>+14 sf</td><td>$0</td><td>Superior finish, interior &minus; lake credit</td><td>~$362,000</td></tr>
+        <tr><td>70 Ponce Deleon Dr</td><td>$365,000</td><td>+39 sf</td><td>$0</td><td>Upgraded, interior + lake credit</td><td>~$360,000</td></tr>
+        <tr><td>4 Eastgate Ln</td><td>$360,000</td><td>+135 sf</td><td>$0</td><td>Larger/updated, interior + size/lake</td><td>~$352,000</td></tr>
+        <tr><td>13 Unionin Ct</td><td>$340,000</td><td>+27 sf</td><td>$0</td><td>Average finish + lake credit</td><td>~$348,000</td></tr>
+        <tr><td>8 Burning Sands (Sec 35)</td><td>~$302,000</td><td>&minus;95 sf</td><td>$0</td><td>Same section, interior + size/lake</td><td>~$330,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="reconcile">
+    <div><div class="lab">Reconciled market value</div><div class="v">$355,000 <small>range $340,000 &ndash; $372,000</small></div></div>
+    <div style="max-width:430px;font-size:12.5px;color:#c8d4e1">Anchored to the seven-AVM cluster ($352k) and the adjusted, similar-size solds, with a modest premium for the freshwater lake and dock and a discount for condition uncertainty on a long-held home.</div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Today's competition</div>
+  <h2>What buyers see right now</h2>
+  <p class="muted small">35 matched 3-bed / 2-bath homes (1,850&ndash;2,250 sq ft, no pool, no HOA) are active in Palm Coast. Asking prices run from the high-$270s to the $480s depending on condition, finish and water. A sample closest in size is below.</p>
+  <div class="grid g4" style="margin-top:14px">
+    <div class="card stat"><div class="k">Matched active listings</div><div class="v">35</div></div>
+    <div class="card stat"><div class="k">Matched pendings</div><div class="v">21</div></div>
+    <div class="card stat"><div class="k">Months of inventory</div><div class="v">~3.6</div></div>
+    <div class="card stat"><div class="k">Sold-to-list (matched)</div><div class="v">~97%</div></div>
+  </div>
+  <div class="tablewrap" style="margin-top:14px">
+    <table>
+      <thead><tr><th>Active listing (similar size)</th><th>List price</th><th>Sq ft</th><th>List $/sf</th><th>Built</th></tr></thead>
+      <tbody>
+        <tr><td>9 Blackberry Pl</td><td>$279,900</td><td>2,043</td><td>$137</td><td>1988</td></tr>
+        <tr><td>27 Red Clover Ln</td><td>$298,500</td><td>2,063</td><td>$145</td><td>2003</td></tr>
+        <tr><td>21 Post View Dr</td><td>$319,000</td><td>2,148</td><td>$149</td><td>1990</td></tr>
+        <tr><td>86 Fellowship Dr</td><td>$334,900</td><td>1,929</td><td>$174</td><td>1991</td></tr>
+        <tr><td>36 Lancaster Ln</td><td>$399,000</td><td>2,193</td><td>$182</td><td>2005</td></tr>
+        <tr><td>142 Eric Dr</td><td>$449,000</td><td>2,086</td><td>$215</td><td>2005</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="xs muted" style="margin-top:8px">Asking prices, not sales. With ~3.6 months of inventory and solds closing near 97% of list, the recommended list near $359,900 prices the home competitively against this field while leaving negotiating room.</p>
+</section>
+<!-- JHT "Want updates?" opt-in component. Self-contained, inherits the report theme.
+     Insert as the LAST content section, right before the methodology/disclosure section.
+     Replace https://airtable.com/appQ5Tyh24YqW2Ldo/shrwvZtxKkQG58i3u?prefill_Property%20Address=52%20Buttonworth%20Dr%2C%20Palm%20Coast%20FL%2032137&hide_Property%20Address=true&prefill_CMA%20link=https%3A%2F%2Fcma.joshhanoud.com%2F52-buttonworth-dr-5cbbb4.html&hide_CMA%20link=true with the Airtable shared-form URL for the "CMA Update
+     Subscribers" table, prefilled with this report's exact Property Address and CMA link:
+       https://airtable.com/<formShareId>?prefill_Property%20Address=17%20Pinelark%20Ln%2C%20Palm%20Coast%2C%20FL%2032164&hide_Property%20Address=true&prefill_CMA%20link=<published url>&hide_CMA%20link=true
+     (The form share URL lives in the skill CONFIG once Josh creates the form view.)
+     NOTE: refreshed reports are sent ONLY to people who opt in here. -->
+<section id="optin">
+  <style>
+    #optin .oi-card{background:linear-gradient(135deg,var(--navy),var(--navy2,#1b3a5e));border-radius:16px;padding:28px 30px;color:#fff;box-shadow:var(--shadow)}
+    #optin .oi-card h3{margin:0 0 8px;font-size:21px;color:#fff}
+    #optin .oi-card p{margin:0 0 18px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.85);max-width:560px}
+    #optin .oi-btn{display:inline-block;background:var(--accent);color:var(--navy);font-weight:700;font-size:15px;padding:12px 26px;border-radius:10px;text-decoration:none}
+    #optin .oi-btn:hover{filter:brightness(1.06)}
+    #optin .oi-fine{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:14px;max-width:560px}
+  </style>
+  <div class="eyebrow">Stay current</div>
+  <h2>This report has a shelf life. Your link doesn't have to.</h2>
+  <div class="oi-card">
+    <h3>Want this report to keep itself up to date?</h3>
+    <p>The numbers in this analysis reflect the market as of the report date. New sales close every week, and your home's value range moves with them. Opt in and we'll re-run the full analysis about every 30 days, update this same link, and email you a short note on what changed: new comparable sales, where your range moved, and what it means.</p>
+    <a class="oi-btn" href="https://airtable.com/appQ5Tyh24YqW2Ldo/shrwvZtxKkQG58i3u?prefill_Property%20Address=52%20Buttonworth%20Dr%2C%20Palm%20Coast%20FL%2032137&hide_Property%20Address=true&prefill_CMA%20link=https%3A%2F%2Fcma.joshhanoud.com%2F52-buttonworth-dr-5cbbb4.html&hide_CMA%20link=true" target="_blank" rel="noopener">Yes, keep my report updated</a>
+    <div class="oi-fine">Free, no obligation. We only use your email for these report updates, and you can stop them any time by replying to an update email. Updates stop automatically if the home is listed or sold.</div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Methodology, confidence and sources</div>
+  <h2>How this was built</h2>
+  <div class="twocol" style="margin-top:12px">
+    <div>
+      <h3 style="margin-bottom:6px">Method</h3>
+      <ul class="clean">
+        <li>Subject facts pulled from the Flagler County Property Appraiser record (heated area = 2,012 sq ft) and cross-checked against Zillow, Realist and RPR.</li>
+        <li>Waterfront status verified on the satellite map: freshwater lake (not a saltwater navigable canal), so the saltwater-canal exclusion does not apply and the lake premium is treated as modest.</li>
+        <li>Comps pulled live from all three MLS systems (Stellar, realMLS/Flexmls, Citrus), de-duplicated, then screened on the map for pool, HOA, oceanfront and canal before any math.</li>
+        <li>Seven AVMs reconciled against the matched sold/pending/active evidence and a freshwater lake/dock premium.</li>
+      </ul>
+      <h3 style="margin:12px 0 6px">Confidence</h3>
+      <ul class="clean">
+        <li><b>Good</b> on the value band: seven AVMs cluster tightly ($338k&ndash;$369.5k) and 59 matched solds frame the range.</li>
+        <li><b>Watch item:</b> interior condition of a long-held home and the exact lake-frontage premium &mdash; both can move the final number within the stated range.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-bottom:6px">Sources</h3>
+      <div class="src-list">
+        Flagler County Property Appraiser (qpublic) &middot; parcel 07-11-31-7035-00680-0260<br>
+        Stellar MLS (Matrix) &mdash; matched closed/active/pending, accessed 06/18/2026<br>
+        realMLS / Flexmls data-share &mdash; searched live 06/18/2026<br>
+        Citrus County MLS (Matrix) &mdash; searched live 06/18/2026<br>
+        Realist RealAVM (CoreLogic-derived) &middot; RPR RVM &middot; Zillow Zestimate &mdash; pulled live<br>
+        Realtor.com panel AVMs (RealEstimate, Collateral Analytics, Cotality, Quantarium) &mdash; agent-entered from the listing<br>
+        Satellite / GIS imagery for waterfront and canal screening
+      </div>
+      <div class="disc" style="margin-top:14px">
+        This Comparative Market Analysis is a <b>broker's opinion of value, not an appraisal</b>, and is provided for marketing and pricing purposes. It is not a guarantee of sale price. For legal or contractual questions, consult your broker or attorney. The Josh Hanoud Team and eXp Realty are committed to <b>Fair Housing</b>: this analysis is based solely on property characteristics and market data, without regard to race, color, religion, sex, handicap, familial status, national origin, or any other protected class.
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Josh Hanoud Team / eXp Realty &middot; (352) 397-5182 &middot; josh@joshhanoud.com &middot; www.FL-HouseHunt.com</p>
+    <p class="xs">Prepared June 18, 2026 for Henriette Harding. Broker's opinion of value, not an appraisal. &copy; 2026 Josh Hanoud Team.</p>
+  </div>
+</footer>
+<!-- JHT Tooltip Glossary. Self-contained; paste this whole block at the VERY END of
+     the document, just above the final closing body tag. No placeholders and no manual
+     markup: the script scans the report once on load and wraps the first few occurrences
+     of each glossary term with a dotted underline; hover (desktop) or tap (mobile) shows
+     a plain-language bubble. Terms it can't find are simply skipped, so this same block
+     works in every report. -->
+<style>
+  .jht-tip{border-bottom:1.5px dotted var(--accent,#c9a227);cursor:help}
+  #jhtBubble{position:fixed;z-index:9999;max-width:300px;background:var(--navy,#16263d);color:#fff;border-radius:10px;padding:11px 13px;font-size:12.5px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.25);display:none;pointer-events:none}
+  #jhtBubble b{color:var(--accent,#c9a227);display:block;margin-bottom:3px;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+</style>
+<script>
+(function(){
+  var G=[
+    ["months of inventory","How long it would take to sell every home currently for sale at today's pace. Under about 6 months favors sellers."],
+    ["sold-to-list ratio","What homes actually sold for vs. their asking price. 96% means a $400,000 listing typically closed near $384,000."],
+    ["median days to contract","How long it took half the recent sales to get an accepted offer. Lower means a faster market."],
+    ["days on market","How long a home has been for sale without an accepted offer."],
+    ["buyer concession","Money the seller credits the buyer at closing. It typically covers the buyer's loan closing costs, inspection or appraisal repairs, and the buyer's brokerage fee. Around 4% total on average in this market, and priced into the deal."],
+    ["buyer concessions","Money the seller credits the buyer at closing. It typically covers the buyer's loan closing costs, inspection or appraisal repairs, and the buyer's brokerage fee. Around 4% total on average in this market, and priced into the deal."],
+    ["seller concessions","Money the seller credited the buyer at closing. We subtract it to see what the seller truly received."],
+    ["doc stamps","Florida's transfer tax on the deed: 70 cents per $100 of the sale price. The seller customarily pays it."],
+    ["title insurance","A one-time policy guaranteeing the buyer gets clean ownership. In this area the seller customarily buys it."],
+    ["mortgage payoff","What you still owe your lender, paid off out of the sale money at closing."],
+    ["net proceeds","The cash you walk away with after all costs and your loan payoff."],
+    ["net to seller","The cash you walk away with after all costs and your loan payoff."],
+    ["adjusted value","Each sale restated as if that home were yours: we add or subtract for differences like a bathroom or garage bay."],
+    ["adjusted","We add or subtract value for feature differences so every sale compares apples to apples with your home."],
+    ["comparable","A recently sold home similar enough to yours that a buyer would consider both. The foundation of pricing."],
+    ["comps","Recently sold homes similar to yours that buyers would also consider. The foundation of pricing."],
+    ["AVM","Automated Valuation Model: a computer's price estimate, like a Zestimate. A useful cross-check, not a verdict."],
+    ["Zestimate","Zillow's computer-generated estimate. A useful cross-check, but it can't see condition or upgrades."],
+    ["pending","Under contract but not closed yet. Pendings show where the market is heading right now."],
+    ["heated","Air-conditioned living space as measured by the county. Garages, porches and lanais don't count."],
+    ["appraisal","A licensed appraiser's formal value opinion, ordered later by the buyer's lender. This report is a market analysis, not an appraisal."],
+    ["homestead","Florida's tax break on a primary residence. It caps how fast the taxable value can rise, and it resets when a home sells."],
+    ["$/SF","Price divided by living area. It lets us compare homes of different sizes fairly."]
+  ];
+  var SKIP=/^(SCRIPT|STYLE|A|BUTTON|INPUT|SELECT|TEXTAREA|H1|SVG|CANVAS|LABEL)$/;
+  function annotateAll(){
+    var tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+    var nodes=[];while(n=tw.nextNode())if(n.nodeValue.length>2)nodes.push(n);
+    var items=G.map(function(g){return {rx:new RegExp('(^|[^\\w$])('+g[0].replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&')+')($|[^\\w])','i'),def:g[1],hits:0};});
+    for(var i=0;i<nodes.length;i++){
+      n=nodes[i];
+      var p=n.parentNode;if(!p||SKIP.test(p.nodeName)||p.closest('.jht-tip,#jhtBubble,a,h1,button'))continue;
+      for(var j=0;j<items.length;j++){
+        var it=items[j];if(it.hits>=2)continue;
+        var m=it.rx.exec(n.nodeValue);if(!m)continue;
+        var idx=m.index+m[1].length,len=m[2].length;
+        var after=n.splitText(idx);var tail=after.splitText(len);
+        var span=document.createElement('span');span.className='jht-tip';span.setAttribute('data-def',it.def);span.setAttribute('data-term',m[2]);
+        span.textContent=after.nodeValue;p.replaceChild(span,after);
+        it.hits++;nodes.splice(i+1,0,tail);
+        break;
+      }
+    }
+  }
+  function init(){
+    annotateAll();
+    var b=document.createElement('div');b.id='jhtBubble';document.body.appendChild(b);
+    var current=null;
+    function show(el){
+      current=el;
+      b.innerHTML='<b>'+el.getAttribute('data-term')+'</b>'+el.getAttribute('data-def');
+      b.style.display='block';
+      var r=el.getBoundingClientRect(),bw=b.offsetWidth,bh=b.offsetHeight;
+      var x=Math.max(8,Math.min(window.innerWidth-bw-8,r.left+r.width/2-bw/2));
+      var y=r.top-bh-8;if(y<8)y=r.bottom+8;
+      b.style.left=x+'px';b.style.top=y+'px';
+    }
+    function hide(){b.style.display='none';current=null;}
+    document.addEventListener('mouseover',function(e){var t=e.target.closest('.jht-tip');if(t)show(t);else if(!e.target.closest('#jhtBubble'))hide();});
+    document.addEventListener('click',function(e){var t=e.target.closest('.jht-tip');if(t&&current!==t){e.preventDefault();show(t);}else if(!t)hide();});
+    window.addEventListener('scroll',hide,{passive:true});
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
+<!-- JHT report open-tracking beacon. Paste this whole block at the VERY END of every
+     published CMA, after the tooltip glossary block, just above the final closing body tag. No placeholders.
+     What it does: on page open, sends a GET beacon (address + page + device class) to the
+     CMA Report Open Relay (Google Apps Script in Josh's account), which forwards it to the
+     Airtable webhook; the "Report open logger" automation files a row in Report Opens and
+     the "Report open hand-raise notify" automation emails Josh instantly. The CMA poller
+     later writes the view to the matched lead's Follow Up Boss file.
+     Privacy/noise controls: open the report with #agent on the URL to view WITHOUT pinging
+     (e.g. cma.joshhanoud.com/x.html#agent); repeat opens on the same device within 30
+     minutes are not re-sent; only the address (already in the public URL), the page path,
+     and a coarse device class are transmitted - no names, emails, or precise identifiers. -->
+<script>
+(function(){
+  var RELAY='https://script.google.com/macros/s/AKfycbw75t7LCeY_KtOHs5Mpgbbo11kOYpHUv0rubmqm8LeZWjDXwvhT5A2UVH13ebJH0K-L/exec';
+  try{
+    if(location.hash==='#agent')return;
+    var k='jht_open_'+location.pathname,now=Date.now();
+    var last=parseInt(localStorage.getItem(k)||'0',10);
+    if(now-last<1800000)return;
+    localStorage.setItem(k,String(now));
+    var h1=document.querySelector('h1');
+    var addr=h1?h1.textContent.trim():location.pathname;
+    var dev=(/Mobi|Android/i.test(navigator.userAgent)?'mobile':'desktop');
+    var u=RELAY+'?address='+encodeURIComponent(addr)+'&page='+encodeURIComponent(location.pathname+location.search)+'&device='+dev;
+    (new Image()).src=u;
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
