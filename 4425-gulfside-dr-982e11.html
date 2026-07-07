@@ -8,7 +8,12 @@
   :root{
     --navy:#0f2440; --navy2:#173357; --ink:#1a2230; --muted:#5c6a7d; --line:#e4e8ef;
     --bg:#f6f8fb; --card:#ffffff; --accent:#c8a24a; --accent2:#1f5f8b; --good:#1f7a4d; --warn:#9a5b12;
+    --slate:#5c6a7d; --shadow:0 4px 14px rgba(15,36,64,.06);
   }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px}
+  .reconcile{display:flex;justify-content:space-between;align-items:center;background:#fbf7ec;border:1px solid #ecd9a6;border-left:4px solid var(--accent);border-radius:10px;padding:14px 18px}
+  .reconcile .lab{color:var(--warn);font-weight:700}
+  .reconcile .v{font-size:26px;font-weight:800;color:var(--navy)}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -290,23 +295,103 @@
       raw $843,600 average.</p>
   </section>
 
-  <section>
-    <div class="eyebrow">Estimated seller net</div>
-    <h2>What you keep at each price</h2>
-    <p class="small muted">Estimates only, based on a 4% brokerage fee plus $300, a 4% buyer concession allowance, Florida
-      documentary stamps at 0.7%, and title insurance on the state sliding scale. Your actual net depends on the final
-      contract, any mortgage payoff, and negotiated costs. Confirm figures with your closing agent.</p>
-    <table>
-      <thead><tr><th>Sale price</th><th>Estimated costs</th><th>Estimated net to you</th></tr></thead>
-      <tbody>
-        <tr><td>$875,000</td><td>$81,335</td><td>$793,665</td></tr>
-        <tr><td>$860,000</td><td>$79,495</td><td>$780,505</td></tr>
-        <tr class="subjrow"><td>$850,000 (recommended)</td><td>$78,575</td><td>$771,425</td></tr>
-        <tr><td>$840,000</td><td>$77,655</td><td>$762,345</td></tr>
-        <tr><td>$825,000 (aggressive)</td><td>$76,275</td><td>$748,725</td></tr>
-      </tbody>
-    </table>
-  </section>
+  <section id="sellernet">
+  <style>
+    #sellernet .sn-inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px}
+    #sellernet .sn-field{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow)}
+    #sellernet .sn-field > label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:7px}
+    #sellernet .sn-field .sub{font-size:11.5px;color:var(--slate);font-weight:500}
+    #sellernet input[type=number],#sellernet input[type=text]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-variant-numeric:tabular-nums;color:var(--ink);background:#fff;font-family:inherit}
+    #sellernet input[type=range]{width:100%;margin-top:4px;accent-color:var(--accent)}
+    #sellernet .sn-misc{display:grid;grid-template-columns:1fr 128px;gap:8px}
+    #sellernet .sn-out{float:right;color:var(--accent2);font-weight:700;font-variant-numeric:tabular-nums}
+    #sellernet .sn-table{width:100%;border-collapse:collapse;font-size:13.5px}
+    #sellernet .sn-table td{padding:9px 6px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums}
+    #sellernet .sn-table td:first-child{text-align:left;color:var(--slate)}
+    #sellernet .sn-table tr.tot td{border-top:2px solid var(--navy);border-bottom:none;font-weight:700;color:var(--navy);font-size:15px;padding-top:12px}
+    #sellernet .sn-neg{color:var(--warn)}
+  </style>
+  <div class="eyebrow">Estimated seller net</div>
+  <h2>What you walk away with</h2>
+  <p class="small muted">Set the sale price and drag the buyer-concession slider, then fill in your mortgage payoff and any case-by-case items. Net to seller updates live. Standard Florida costs are built in: brokerage 4% + $300, title insurance $575 + $500 per $100k, and doc stamps 0.7%.</p>
+  <div class="sn-inputs">
+    <div class="sn-field">
+      <label>Sale price</label>
+      <input type="number" id="snPrice" value="850000" step="1000" min="0">
+    </div>
+    <div class="sn-field">
+      <label>Estimated buyer concessions <span class="sn-out" id="snConcOut">4% &middot; $0</span></label>
+      <input type="range" id="snConc" min="0" max="8" step="0.5" value="4">
+      <div class="sub">Seller credit toward buyer closing costs (0&ndash;8%, default 4%).</div>
+    </div>
+    <div class="sn-field">
+      <label>Mortgage payoff <span class="sub">(agent fills in)</span></label>
+      <input type="number" id="snPayoff" placeholder="0" step="1000" min="0">
+    </div>
+    <div class="sn-field">
+      <label>Misc. item 1 <span class="sub">(agent fills in)</span></label>
+      <div class="sn-misc"><input type="text" id="snM1L" placeholder="label (e.g. survey)"><input type="number" id="snM1V" placeholder="0" step="100"></div>
+    </div>
+    <div class="sn-field">
+      <label>Misc. item 2 <span class="sub">(agent fills in)</span></label>
+      <div class="sn-misc"><input type="text" id="snM2L" placeholder="label (e.g. home warranty)"><input type="number" id="snM2V" placeholder="0" step="100"></div>
+    </div>
+    <div class="sn-field">
+      <label>Misc. item 3 <span class="sub">(agent fills in)</span></label>
+      <div class="sn-misc"><input type="text" id="snM3L" placeholder="label (e.g. HOA estoppel)"><input type="number" id="snM3V" placeholder="0" step="100"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px;padding:4px 18px">
+    <table class="sn-table"><tbody id="snBody"></tbody></table>
+  </div>
+  <div class="reconcile" style="margin-top:16px">
+    <span class="lab">Estimated net to seller</span>
+    <span class="v" id="snNet">$0</span>
+  </div>
+  <p class="xs muted" style="margin-top:8px">Estimate only. Actual net depends on final contract terms, prorations, liens, HOA/tax prorations, and closing date. Confirm figures with your closing agent.</p>
+  <script>
+  (function(){
+    var f=function(n){return '$'+Math.round(n).toLocaleString('en-US');};
+    function num(id){var v=parseFloat(document.getElementById(id).value);return isNaN(v)?0:v;}
+    function lbl(id,def){var v=document.getElementById(id).value.trim();return v||def;}
+    function calc(){
+      var price=num('snPrice'), concPct=num('snConc');
+      var commission=Math.max(price*0.04,4000)+300;
+      var conc=price*(concPct/100);
+      var title=575+500*((price-100000)/100000); if(title<575)title=575;
+      var doc=price*0.007;
+      var payoff=num('snPayoff'), m1=num('snM1V'), m2=num('snM2V'), m3=num('snM3V');
+      document.getElementById('snConcOut').innerHTML=concPct+'% &middot; '+f(conc);
+      var net=price-commission-conc-title-doc-payoff-m1-m2-m3;
+      var rows=[
+        ['Sale price',price,'pos'],
+        ['Brokerage commission (4% + $300)',-commission,'cost'],
+        ['Buyer concessions ('+concPct+'%)',-conc,'cost'],
+        ['Title insurance',-title,'cost'],
+        ['Doc stamps (0.7%)',-doc,'cost'],
+        ['Mortgage payoff',-payoff,'hide'],
+        [lbl('snM1L','Misc. item 1'),-m1,'hide'],
+        [lbl('snM2L','Misc. item 2'),-m2,'hide'],
+        [lbl('snM3L','Misc. item 3'),-m3,'hide']
+      ];
+      var html='';
+      rows.forEach(function(r){
+        if(r[2]==='hide' && r[1]===0) return;
+        var amt=(r[1]<0?'−'+f(Math.abs(r[1])):f(r[1]));
+        html+='<tr><td>'+r[0]+'</td><td class="'+(r[1]<0?'sn-neg':'')+'">'+amt+'</td></tr>';
+      });
+      html+='<tr class="tot"><td>Estimated net to seller</td><td>'+f(net)+'</td></tr>';
+      document.getElementById('snBody').innerHTML=html;
+      document.getElementById('snNet').textContent=f(net);
+    }
+    ['snPrice','snConc','snPayoff','snM1L','snM1V','snM2L','snM2V','snM3L','snM3V'].forEach(function(id){
+      document.getElementById(id).addEventListener('input',calc);
+    });
+    calc();
+  })();
+  </script>
+</section>
+
 
   <section class="optin">
     <div class="eyebrow">Keep this report current</div>
