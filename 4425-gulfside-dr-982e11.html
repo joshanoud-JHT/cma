@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CMA - 4425 Gulfside Dr, New Port Richey, FL 34652 | Josh Hanoud Team</title>
+<style>
+  :root{
+    --navy:#0f2440; --navy2:#173357; --ink:#1a2230; --muted:#5c6a7d; --line:#e4e8ef;
+    --bg:#f6f8fb; --card:#ffffff; --accent:#c8a24a; --accent2:#1f5f8b; --good:#1f7a4d; --warn:#9a5b12;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:34px 0 78px}
+  header .wrap{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;flex-wrap:wrap}
+  header .brandlogo{height:52px;background:#fff;padding:7px 10px;border-radius:8px;display:block}
+  .addr h1{font-size:26px;margin:14px 0 4px;font-weight:700;letter-spacing:.2px}
+  .addr .sub{color:#c9d6e8;font-size:15px}
+  .tag{display:inline-block;margin-top:10px;background:rgba(200,162,74,.18);color:#e9d9ad;
+    border:1px solid rgba(200,162,74,.5);padding:3px 11px;border-radius:20px;font-size:12.5px;font-weight:600}
+  .prep{text-align:right;font-size:13px;color:#dce6f3;display:flex;flex-direction:column;gap:2px;align-items:flex-end}
+  .prep b{color:#fff}
+  .prep .xs{color:#9fb2ca;font-size:11.5px;margin-top:3px}
+  .exec{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    box-shadow:0 10px 30px rgba(15,36,64,.10);margin-top:-56px;padding:26px 28px;position:relative}
+  .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:var(--accent2);font-weight:700;margin-bottom:6px}
+  .val{font-size:40px;font-weight:800;color:var(--navy);line-height:1.05}
+  .val small{font-size:16px;color:var(--muted);font-weight:600}
+  .range{font-size:14px;color:var(--muted);margin-top:2px}
+  h2{font-size:21px;margin:6px 0 10px;color:var(--navy)}
+  section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin:18px 0}
+  p{margin:9px 0}
+  .small{font-size:13.5px}
+  .xs{font-size:12px}
+  .muted{color:var(--muted)}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+  .tier{border:1px solid var(--line);border-radius:12px;padding:16px}
+  .tier .lab{font-size:12.5px;color:var(--muted);font-weight:600;display:block}
+  .tier .lab span{display:block;font-size:11.5px;font-weight:400;margin-top:3px}
+  .tier b{font-size:26px;color:var(--navy);display:block;margin-top:8px}
+  .tier.rec{border:2px solid var(--accent);background:#fbf7ec}
+  .tier.rec .lab{color:var(--warn)}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:12px}
+  th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:right}
+  th:first-child,td:first-child{text-align:left}
+  thead th{background:#f2f5fa;color:var(--navy);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;border-bottom:2px solid var(--line)}
+  tbody tr:hover{background:#fafbfe}
+  .subjrow{background:#eef4fb;font-weight:700}
+  .badge{display:inline-block;font-size:10.5px;padding:2px 7px;border-radius:10px;font-weight:700;line-height:1.4}
+  .b-match{background:#e2f2ea;color:var(--good)}
+  .b-adj{background:#fbeede;color:var(--warn)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .facts{list-style:none;padding:0;margin:8px 0}
+  .facts li{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--line);font-size:14px}
+  .facts li span:first-child{color:var(--muted)}
+  .facts li b{color:var(--ink)}
+  /* AVM range bar */
+  .avmbar{position:relative;height:8px;background:linear-gradient(90deg,#cfe0f0,#7fa8cf,#cfe0f0);border-radius:6px;margin:56px 8px 70px}
+  .pin{position:absolute;top:-6px;width:2px;height:20px;background:var(--navy)}
+  .pin i{position:absolute;top:-5px;left:-5px;width:12px;height:12px;border-radius:50%;background:var(--accent2);border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+  .pin .lbl{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11px;color:var(--ink);font-weight:600}
+  .pin .amt{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:11.5px;color:var(--navy);font-weight:800}
+  .callout{background:#fbf7ec;border:1px solid #ecd9a6;border-left:4px solid var(--accent);border-radius:10px;padding:14px 16px;margin:14px 0}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px}
+  .kpi{border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+  .kpi b{display:block;font-size:24px;color:var(--navy)}
+  .kpi span{font-size:12px;color:var(--muted)}
+  .disc{font-size:12px;color:var(--muted)}
+  footer{color:var(--muted);font-size:12px;text-align:center;padding:26px 0 44px}
+  a{color:var(--accent2)}
+  .optin{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border:none}
+  .optin .eyebrow{color:var(--accent)}
+  .optin h2{color:#fff}
+  .optin a.btn{display:inline-block;margin-top:10px;background:var(--accent);color:#1a1a1a;font-weight:700;
+    text-decoration:none;padding:10px 18px;border-radius:8px}
+  @media(max-width:720px){.grid2,.tiers,.kpis{grid-template-columns:1fr}.val{font-size:32px}table{font-size:12px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="addr">
+      <img class="brandlogo" src="https://cdn.sitephotos.sierrastatic.com/6509_logo_jht-exp-rectangle-20260127114723.png" alt="Josh Hanoud Team, eXp Realty">
+      <h1>4425 Gulfside Drive</h1>
+      <div class="sub">New Port Richey, FL 34652 &middot; Gulf Harbors / Sea Forest &middot; Deep-water Gulf-access canal</div>
+      <span class="tag">Pre-listing valuation &middot; Prepared July 7, 2026</span>
+    </div>
+    <div class="prep">
+      <span>Prepared for <b>Bill &amp; Debbie Yuss</b></span>
+      <span>Prepared by <b>Josh Hanoud</b></span>
+      <span>Josh Hanoud Team / eXp Realty</span>
+      <span class="xs">Broker's opinion of value, not an appraisal</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="exec">
+    <div class="eyebrow">Estimated market value</div>
+    <div class="val">$850,000 <small>&ndash; $865,000 central</small></div>
+    <div class="range">Supportable range $815,000 to $900,000. Recommended list price <b>$850,000</b>.</div>
+    <p class="small muted" style="margin-top:12px">
+      This is a deep-water, Gulf-access saltwater canal home with 170 feet of concrete seawall, a 10,000 lb boat lift,
+      a dock with electric, sailboat water and no fixed bridges. Because the water is the primary value driver, the
+      analysis is built water-body first: 11 closed Gulf-access canal comparables in Flor A Mar and Sea Forest (adjusted
+      Sold average $465/sq ft, or about $843,600 for this home), reconciled against current pending sales
+      (about $745,000), active competition (about $830,000), the home's own 2023 purchase at $740,000 time-adjusted,
+      and the seven AVMs. The 170 ft frontage, lift and 2025 updates support the upper-middle of the closed range.
+      Automated estimates ($688,000 to $801,000) understate the home because they cannot see the water, so they are
+      shown as a floor, not weighted.
+    </p>
+  </div>
+
+  <section>
+    <div class="eyebrow">Recommended pricing strategy</div>
+    <h2>Three ways to price it</h2>
+    <div class="tiers">
+      <div class="tier"><span class="lab">Aggressive<span>drives speed in a well-supplied segment</span></span><b>$825,000</b></div>
+      <div class="tier rec"><span class="lab">Recommended list<span>matches adjusted closed evidence plus frontage</span></span><b>$850,000</b></div>
+      <div class="tier"><span class="lab">Premium<span>above the evidence; expect a longer marketing period</span></span><b>$875,000</b></div>
+    </div>
+    <div class="callout">
+      <b>Read this before re-listing.</b> The prior listing launched at <b>$975,000</b>, was cut to <b>$859,000</b>, and
+      was cancelled after <b>124 days</b> on market. The comparable sales do not say the home is worth less than $800,000;
+      similar Gulf-access pooled homes closed between $805,000 and $980,000, and this home's frontage, lift and updates
+      are stronger than most of them. The most likely reasons it did not sell were the roughly 12% overpriced launch that
+      staled the listing, showing friction (proof of funds required with every offer, pre-qualified buyers only), and a
+      slow, heavily supplied segment. Re-list fresh at a sharp, defensible number, remove the showing restrictions, and
+      do not repeat the $975,000 anchor. Re-listing again at $859,000 or higher with the same friction risks another
+      120-day listing that does not sell.
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Where the market is right now</div>
+    <h2>A buyer-favorable, slow-moving segment</h2>
+    <div class="kpis">
+      <div class="kpi"><b>45 + 2</b><span>active + pending Gulf-access canal homes, 1,400&ndash;2,600 sq ft</span></div>
+      <div class="kpi"><b>0.90&ndash;1.01</b><span>sold-to-list ratio on the closed comp set (median about 0.96)</span></div>
+      <div class="kpi"><b>0&ndash;294</b><span>days on market range for closed sales; sharp-priced homes sold fastest</span></div>
+    </div>
+    <p class="small">
+      There is heavy inventory in this size and water class. Homes that were priced tightly and shown well went pending
+      in under two weeks; homes that reached for a premium sat 90 to 260 days and were reduced. Close-in-size active
+      listings (roughly 1,800 to 1,900 sq ft, Gulf-access, pooled) are asking between $788,000 and $1,099,000, and most
+      are sitting. That is the field this home competes against.
+    </p>
+    <p class="small muted">
+      Expected time on market by tier, from how comparable sales at each relative price actually performed:
+      Aggressive ($825,000), typically under 30 days; At market ($850,000), roughly 30 to 75 days;
+      Premium ($875,000), 75 days or more with a likely reduction.
+    </p>
+  </section>
+
+  <section>
+    <div class="grid2">
+      <div>
+        <div class="eyebrow">The property</div>
+        <h2>4425 Gulfside Dr</h2>
+        <ul class="facts">
+          <li><span>Heated area (county)</span><b>1,813 sq ft</b></li>
+          <li><span>Beds / baths</span><b>3 / 2</b></li>
+          <li><span>Garage</span><b>2-car, oversized</b></li>
+          <li><span>Year built</span><b>1986</b></li>
+          <li><span>Lot</span><b>0.17 ac corner, 7,527 sq ft</b></li>
+          <li><span>Roof</span><b>Metal</b></li>
+          <li><span>Pool</span><b>Private, heated, new 2025 screen cage</b></li>
+          <li><span>Just / assessed value (2026)</span><b>$584,394</b></li>
+          <li><span>Last sale</span><b>$740,000 (May 2023)</b></li>
+        </ul>
+      </div>
+      <div>
+        <div class="eyebrow">Why the water sets the value</div>
+        <h2>Frontage, access and boating</h2>
+        <ul class="facts">
+          <li><span>Water frontage</span><b>170 ft saltwater canal</b></li>
+          <li><span>Seawall</span><b>Concrete</b></li>
+          <li><span>Gulf access</span><b>Direct, no fixed bridges</b></li>
+          <li><span>Water class</span><b>Sailboat water, no wake zone</b></li>
+          <li><span>Dock</span><b>25x10, electric (2012)</b></li>
+          <li><span>Boat lift</span><b>10,000 lb capacity</b></li>
+          <li><span>Front exposure</span><b>Southwest (sunset water views)</b></li>
+          <li><span>Flood zone</span><b>AE / X (panel 12101C0188G)</b></li>
+          <li><span>HOA</span><b>$88/mo + $200/yr Gulf Harbors Beach Club</b></li>
+        </ul>
+        <p class="xs muted">County shows land use SFR Waterfront. 170 ft of frontage on a corner lot is well above the
+        typical 60 to 100 ft interior canal lot in this community, which supports the upper part of the value range.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Automated estimates (AVMs)</div>
+    <h2>Shown as a floor, not weighted</h2>
+    <div class="avmbar">
+      <div class="pin" style="left:2%"><i></i><span class="amt" style="top:-40px">$688,575</span><span class="lbl" style="top:16px">Quantarium</span></div>
+      <div class="pin" style="left:4%"><i></i><span class="amt" style="top:-58px">$692,100</span><span class="lbl" style="top:34px">Zillow</span></div>
+      <div class="pin" style="left:48%"><i></i><span class="amt" style="top:-40px">$765,000</span><span class="lbl" style="top:16px">RealEstimate / Collateral Analytics</span></div>
+      <div class="pin" style="left:98%"><i></i><span class="amt" style="top:-40px">$800,997</span><span class="lbl" style="top:16px">Cotality / CoreLogic</span></div>
+    </div>
+    <p class="xs muted">Panel low $688,575, high $800,997, midpoint about $742,000 (the same as the 2023 purchase price).
+      RPR and the Realist RealAVM were not retrieved this session; the CoreLogic value is represented by Cotality above.
+      AVMs lean on tax records and broad trends and cannot price 170 ft of frontage, a boat lift, sailboat access, or
+      the 2025 updates, so they run below the reconciled comp value. Treat this band as a floor.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">MLS-verified market analysis</div>
+    <h2>Adjusted closed sales, Gulf-access canal homes</h2>
+    <p class="small muted">Each closed sale is adjusted to this home for beds, baths, garage and pool using price-band
+      values for the $600K to $1M range (bedroom $7,000; full bath $12,000; half bath $4,000; garage $15,000; private
+      pool $30,000), then converted to an adjusted price per heated square foot and applied to 1,813 sq ft. All are
+      Gulf-access saltwater canal single-family homes in Flor A Mar or Sea Forest, closed within 24 months.</p>
+    <table>
+      <thead><tr><th>Address (subdivision, year)</th><th>Sold</th><th>Beds/Ba</th><th>Pool</th><th>Sq ft</th><th>Adj $/sf</th><th>Indicated value</th><th>Closed</th></tr></thead>
+      <tbody>
+        <tr class="subjrow"><td>4425 Gulfside Dr (subject)</td><td>&ndash;</td><td>3 / 2</td><td><span class="badge b-match">Yes</span></td><td>1,813</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td></tr>
+        <tr><td>5424 Pilots Pl (Flor A Mar, 1978)</td><td>$980,000</td><td>2 / 2.5</td><td><span class="badge b-match">Yes</span></td><td>1,829</td><td>$537.45</td><td>$974,401</td><td>04/2026</td></tr>
+        <tr><td>4229 Rudder Way (Flor A Mar, 2001)</td><td>$940,000</td><td>3 / 3</td><td><span class="badge b-match">Yes</span></td><td>1,736</td><td>$534.56</td><td>$969,161</td><td>04/2026</td></tr>
+        <tr><td>5572 Bowline Bnd (Flor A Mar, 1968)</td><td>$950,000</td><td>3 / 2</td><td><span class="badge b-match">Yes</span></td><td>1,820</td><td>$521.98</td><td>$946,346</td><td>10/2025</td></tr>
+        <tr><td>5433 Leeward Ln (Flor A Mar, 1971)</td><td>$845,000</td><td>3 / 2.5</td><td><span class="badge b-match">Yes</span></td><td>1,707</td><td>$492.68</td><td>$893,224</td><td>09/2025</td></tr>
+        <tr><td>6240 Bayside Dr (Sea Forest, 1986)</td><td>$735,000</td><td>3 / 2</td><td><span class="badge b-match">Yes</span></td><td>1,552</td><td>$473.58</td><td>$858,605</td><td>06/2025</td></tr>
+        <tr><td>5401 Pilots Pl (Flor A Mar, 1974)</td><td>$860,000</td><td>3 / 2</td><td><span class="badge b-match">Yes</span></td><td>1,868</td><td>$460.39</td><td>$834,679</td><td>05/2026</td></tr>
+        <tr><td>4811 Shell Stream Blvd (Flor A Mar, 1963)</td><td>$815,000</td><td>3 / 2.5</td><td><span class="badge b-match">Yes</span></td><td>1,828</td><td>$443.65</td><td>$804,345</td><td>10/2025</td></tr>
+        <tr><td>5000 Galleon Ct (Flor A Mar, 1982)</td><td>$834,000</td><td>3 / 2</td><td><span class="badge b-match">Yes</span></td><td>1,912</td><td>$436.19</td><td>$790,817</td><td>10/2025</td></tr>
+        <tr><td>6209 Spoonbill Dr (Sea Forest, 1983)</td><td>$749,000</td><td>3 / 2</td><td><span class="badge b-adj">Comm. only</span></td><td>1,856</td><td>$419.72</td><td>$760,952</td><td>09/2024</td></tr>
+        <tr><td>4904 Forestay Ct (Flor A Mar, 1977)</td><td>$805,000</td><td>3 / 2</td><td><span class="badge b-match">Yes</span></td><td>2,000</td><td>$402.50</td><td>$729,732</td><td>12/2024</td></tr>
+        <tr><td>5048 Cabrilla Ct (Flor A Mar, 1974)</td><td>$705,000</td><td>3 / 2</td><td><span class="badge b-adj">None</span></td><td>1,858</td><td>$395.59</td><td>$717,199</td><td>07/2024</td></tr>
+      </tbody>
+    </table>
+    <div class="kpis" style="margin-top:16px">
+      <div class="kpi"><b>$736,000</b><span>Low 3 average of adjusted $/sf, applied to this home</span></div>
+      <div class="kpi"><b>$843,600</b><span>Overall average (the headline value anchor)</span></div>
+      <div class="kpi"><b>$963,300</b><span>High 3 average (best, fastest-selling comps)</span></div>
+    </div>
+    <p class="xs muted" style="margin-top:12px">Note the pattern: smaller homes (about 1,700 to 1,900 sq ft) command a higher
+      price per square foot than larger ones, because the waterfront lot premium is roughly fixed regardless of house
+      size. That works in this home's favor at 1,813 sq ft.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Today's competition</div>
+    <h2>Active and pending</h2>
+    <table>
+      <thead><tr><th>Address (subdivision, year)</th><th>Status</th><th>Price</th><th>Beds/Ba</th><th>Pool</th><th>Sq ft</th><th>Days on market</th></tr></thead>
+      <tbody>
+        <tr><td>5101 South Shore Dr (Flor A Mar, 2001)</td><td>Active</td><td>$1,099,000</td><td>3 / 3</td><td>Yes</td><td>1,837</td><td>66</td></tr>
+        <tr><td>4976 Galleon Ct (Flor A Mar, 1973)</td><td>Pending</td><td>$950,000</td><td>4 / 3</td><td>Yes</td><td>2,268</td><td>87</td></tr>
+        <tr><td>3619 Corsair Ct (Flor A Mar, 1974)</td><td>Active</td><td>$895,000</td><td>2 / 2</td><td>Yes</td><td>1,895</td><td>52</td></tr>
+        <tr><td>3505 Seaway Dr (Flor A Mar, 2001)</td><td>Pending</td><td>$849,000</td><td>3 / 2.5</td><td>None</td><td>2,125</td><td>99</td></tr>
+        <tr><td>3517 Seaway Dr (Flor A Mar, 1975)</td><td>Active</td><td>$788,000</td><td>3 / 2</td><td>Yes</td><td>1,822</td><td>42</td></tr>
+        <tr><td>4851 Bonito Dr (Flor A Mar, 1986)</td><td>Active</td><td>$780,000</td><td>3 / 2.5</td><td>None</td><td>2,022</td><td>241</td></tr>
+        <tr><td>5524 Leeward Ln (Flor A Mar, 1970)</td><td>Active</td><td>$780,000</td><td>4 / 3</td><td>Yes</td><td>1,951</td><td>261</td></tr>
+      </tbody>
+    </table>
+    <p class="xs muted">The nearest same-size active competitor with a private pool, 3517 Seaway Dr, is asking $788,000 and
+      is still on the market. Aspirational asks above $895,000 are sitting. This confirms a sharp launch price matters
+      more than the headline number in this segment.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">The adjustment model</div>
+    <h2>How each sale was adjusted</h2>
+    <p class="small muted">Adjustments scale to the price point of the property. A bathroom in a $900,000 home is worth
+      more than the same bathroom in a $200,000 home, so this analysis uses the $600K to $1M band values throughout.
+      Beds, baths, garage and pool are adjusted numerically. Water frontage, dock, lift, condition and year are handled
+      through comparable selection and the reconciliation below rather than a fixed dollar figure, because on waterfront
+      those items vary too much to price with a single number.</p>
+    <table>
+      <thead><tr><th>Feature</th><th>Adjustment per unit of difference</th></tr></thead>
+      <tbody>
+        <tr><td>Bedroom</td><td>$7,000</td></tr>
+        <tr><td>Full bath</td><td>$12,000</td></tr>
+        <tr><td>Half bath</td><td>$4,000</td></tr>
+        <tr><td>Garage space</td><td>$15,000</td></tr>
+        <tr><td>Private pool</td><td>$30,000</td></tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:14px"><b>Reconciliation.</b> Two independent methods agree. Direct Gulf-access
+      comparables put the central value near $843,600. A land-plus-building extraction (an interior 1,813 sq ft 1986
+      block home is worth roughly $450,000 to $550,000, plus a Gulf-access deep-water frontage premium of about $300,000
+      to $400,000) lands at $750,000 to $950,000, centered around $840,000 to $870,000. The home's own 2023 sale of
+      $740,000, appreciated at market rates, supports a floor near $790,000 to $820,000. The 170 ft frontage, 10,000 lb
+      lift and 2025 updates push toward the upper-middle, which is why the recommendation is $850,000 rather than the
+      raw $843,600 average.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Estimated seller net</div>
+    <h2>What you keep at each price</h2>
+    <p class="small muted">Estimates only, based on a 4% brokerage fee plus $300, a 4% buyer concession allowance, Florida
+      documentary stamps at 0.7%, and title insurance on the state sliding scale. Your actual net depends on the final
+      contract, any mortgage payoff, and negotiated costs. Confirm figures with your closing agent.</p>
+    <table>
+      <thead><tr><th>Sale price</th><th>Estimated costs</th><th>Estimated net to you</th></tr></thead>
+      <tbody>
+        <tr><td>$875,000</td><td>$81,335</td><td>$793,665</td></tr>
+        <tr><td>$860,000</td><td>$79,495</td><td>$780,505</td></tr>
+        <tr class="subjrow"><td>$850,000 (recommended)</td><td>$78,575</td><td>$771,425</td></tr>
+        <tr><td>$840,000</td><td>$77,655</td><td>$762,345</td></tr>
+        <tr><td>$825,000 (aggressive)</td><td>$76,275</td><td>$748,725</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="optin">
+    <div class="eyebrow">Keep this report current</div>
+    <h2>Get updated values as the market moves</h2>
+    <p class="small">This is a living CMA. If you would like it refreshed automatically as new Gulf Harbors sales close
+      and competing listings change, opt in and you will receive updated versions at this same link. You are never
+      subscribed without asking.</p>
+    <a class="btn" href="https://airtable.com/appQ5Tyh24YqW2Ldo/shrwvZtxKkQG58i3u?prefill_Property%20Address=4425%20Gulfside%20Dr%2C%20New%20Port%20Richey%20FL%2034652&hide_Property%20Address=true">Opt in to updates</a>
+  </section>
+
+  <section>
+    <div class="eyebrow">Methodology, confidence and sources</div>
+    <h2>How this was built</h2>
+    <ul class="small">
+      <li>Subject facts pulled from the Pasco County Property Appraiser (parcel 06-26-16-001B-00000-1390) and the
+        home's prior MLS listing. County heated area (1,813 sq ft) is used, not Zillow square footage.</li>
+      <li>Comparable sales searched in all three MLS systems: Stellar MLS (the controlling system for Pasco, 103 closed
+        matches in the size and water band, plus 47 active and pending), realMLS/Flexmls (0 unique; its data-share
+        mirrors Stellar), and Citrus County MLS (49 records in the zip, all either duplicates of Stellar or inland
+        homes not comparable to a Gulf-access waterfront home). No unique comparables were added by the other two.</li>
+      <li>Value derived water-body first per the team's waterfront method: same water body and frontage type first, a
+        24-month closed window, and two reconciled approaches (direct comparables and land-plus-building extraction),
+        anchored on the home's own last sale.</li>
+      <li>Seven AVMs reviewed (Zillow, Realtor.com RealEstimate, Collateral Analytics, Cotality/CoreLogic, Quantarium;
+        RPR and Realist not retrieved this session). AVMs are shown for context and not weighted, because they cannot
+        price waterfront attributes.</li>
+      <li>Confidence: 7 of 10. The same-community comparable set is strong and the anchors agree. Residual uncertainty
+        comes from variation in individual canal position and frontage among comparables, and from a thin, slow luxury
+        waterfront segment.</li>
+    </ul>
+    <p class="disc" style="margin-top:14px">This is a broker's opinion of value prepared for pricing purposes. It is not
+      an appraisal and is not a guarantee of sale price. All information is deemed reliable but not guaranteed and should
+      be independently verified. For legal or contractual questions, consult your broker or attorney. The Josh Hanoud
+      Team and eXp Realty comply with the Fair Housing Act and do not consider or reference race, color, religion, sex,
+      handicap, familial status, or national origin in this analysis.</p>
+  </section>
+
+  <footer>
+    Josh Hanoud Team &middot; eXp Realty &middot; Comparative Market Analysis for 4425 Gulfside Dr, New Port Richey, FL 34652 &middot; Prepared July 7, 2026 by Josh Hanoud &middot; (352) 397-5182 &middot; josh@joshhanoud.com &middot; FL-HouseHunt.com
+  </footer>
+
+</div>
+</body>
+</html>
