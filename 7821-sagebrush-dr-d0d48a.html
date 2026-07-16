@@ -867,7 +867,7 @@ function compute(){
   const recon=vsum/wsum;
   const lo=Math.min(...vals), hi=Math.max(...vals);
   document.getElementById("reconVal").innerHTML=fmt(Math.round(recon/1000)*1000)+' <small>weighted</small>';
-  document.getElementById("reconRange").textContent="";
+  var _rr=document.getElementById("reconRange"); if(_rr){_rr.textContent="";}
 }
 ["sGla","sGar","sPool","sReno"].forEach(id=>document.getElementById(id).addEventListener("input",compute));
 
