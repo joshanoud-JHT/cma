@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comparative Market Analysis ,  17 Pinelark Ln, Palm Coast FL</title>
+<title>Comparative Market Analysis - 13414 Kane Rd, Spring Hill FL 34609</title>
 <style>
   :root{
     --navy:#16263d; --navy2:#22364f; --ink:#1d2530; --slate:#5a6b7e;
@@ -875,7 +875,6 @@ function compute(){
   document.getElementById("adjBody").innerHTML=rows;
   const recon=vals.reduce((a,b)=>a+b,0)/vals.length;
   document.getElementById("reconVal").innerHTML=fmt(Math.round(recon/1000)*1000)+' <small>average of adjusted sales</small>';
-  document.getElementById("reconRange").textContent="";
 }
 ["sGla","sSink","sCond"].forEach(id=>document.getElementById(id).addEventListener("input",compute));
 
@@ -919,7 +918,7 @@ function renderMls(){
     .sort((x,y)=>Math.abs(x.sf-1852)-Math.abs(y.sf-1852))
     .map(c=>`<tr><td>${c.addr}${c.sink?' <span class="pill flag">Sinkhole</span>':''}</td><td>${fmt(c.price)}</td><td>${fmt0(c.sf)}</td><td>$${(c.price/c.sf).toFixed(0)}</td></tr>`).join("");
 }
-renderComps(); renderPpsf(); compute(); renderAvm(); renderActives(); renderMls();
+[renderComps,renderPpsf,compute,renderAvm,renderActives,renderMls].forEach(function(fn){try{fn();}catch(e){console.error(fn.name,e);}});
 </script>
 
 <!-- JHT Tooltip Glossary. Self-contained; paste this whole block at the VERY END of
