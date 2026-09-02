@@ -442,9 +442,9 @@ header .wrap>div:first-child{flex:1 1 auto;min-width:0}
   <div class="rangebar card" style="margin-top:14px;padding:14px 18px 20px">
     <div class="small muted">Where each estimate falls</div>
     <div class="track" id="avmTrack"></div>
-    <div class="scale"><span>$600k</span><span>$1,100k</span></div>
+    <div class="scale"><span>$700k</span><span>$1,000k</span></div>
   </div>
-  <p class="xs muted">The six available AVMs average $807,143 and run low here; they are model-based and lean on broad trends, and none of them appear to fully credit the 2025 roof, 2024 pool resurface/enclosure, or the 2020&ndash;21 solar/generator/HVAC work. Realist's RealAVM could not be retrieved this session (browser address lookup did not resolve) and is flagged as not available rather than guessed. The agent reconciled value is built from matched active and closed sales with a private pool and 3&ndash;4 full baths in the immediate Largo/Clearwater market.</p>
+  <p class="xs muted">The four lowest AVMs (Cotality, Zillow, Realtor.com, Quantarium) cluster within $23,000 of each other and are shown as one merged pin above for legibility. The six available AVMs average $807,143 and run low here; they are model-based and lean on broad trends, and none of them appear to fully credit the 2025 roof, 2024 pool resurface/enclosure, or the 2020&ndash;21 solar/generator/HVAC work. Realist's RealAVM could not be retrieved this session (browser address lookup did not resolve) and is flagged as not available rather than guessed. The agent reconciled value is built from matched active and closed sales with a private pool and 3&ndash;4 full baths in the immediate Largo/Clearwater market.</p>
 </section>
 
 <!-- MLS VERIFIED -->
@@ -881,11 +881,9 @@ function compute(){
 
 /* ---------- AVM RANGE BAR ---------- */
 function renderAvm(){
-  const lo=600000, hi=1100000;
+  const lo=700000, hi=1000000;
   const pts=[
-    {lab:"Cotality", amt:753356, cls:""},
-    {lab:"Zillow", amt:769700, cls:""},
-    {lab:"Realtor/Quantarium", amt:776400, cls:""},
+    {lab:"4-AVM avg (Cotality/Zillow/Realtor/Quantarium)", amt:768965, cls:""},
     {lab:"RPR", amt:859000, cls:""},
     {lab:"Collateral", amt:908000, cls:""},
     {lab:"Agent", amt:950000, cls:"agent"},
