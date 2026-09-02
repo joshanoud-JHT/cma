@@ -1,0 +1,62 @@
+{
+  "as_of": "2026-09-02T18:00:00Z",
+  "subject": {
+    "address": "5500 Ocean Shore Blvd Unit 16, Ormond Beach, FL 32176",
+    "parcel": "32-08-01-01-C080",
+    "alt_key": "2950757",
+    "heated_sf": 1252,
+    "beds": 2,
+    "full_bath": 2,
+    "half_bath": 1,
+    "garage": 0,
+    "pool": 0,
+    "lot": "condo common element",
+    "year_built": 1973,
+    "homestead": true,
+    "last_sale": {"date": "2009-10-13", "price": 100, "qualified": false},
+    "subdivision": "Kingston Shores Phase 1",
+    "hero_photo": "none (plain navy header used)"
+  },
+  "avms": {
+    "realist": "not available (tool rendering error)",
+    "rpr": {"value": 111670, "range": [94920, 128400], "updated": "2026-08-30"},
+    "zillow": {"value": 85100, "range": [68000, 105000]},
+    "realtor_realestimate": {"value": 301000, "source": "agent-entered", "flag": "outlier"},
+    "collateral_analytics": {"value": 301000, "source": "agent-entered", "flag": "outlier"},
+    "cotality_corelogic": {"value": 149079, "source": "agent-entered"},
+    "quantarium": "not provided"
+  },
+  "mls_search_counts": {
+    "stellar": {"subdivision": "Kingston Shores", "active": 2, "pending": 2, "sold_total": 10, "sold_used": 7},
+    "realmls_flexmls": {"zip_32176_active": 11, "address_closed_data_share": 5, "new_comps_added": 0},
+    "citrus": {"county_volusia_active_pending_closed": 0}
+  },
+  "comps_sold": [
+    {"unit":"17","close_date":"2025-05-12","price":108000,"sf":1252,"half_bath":1,"pool":0,"dom":34},
+    {"unit":"21","close_date":"2024-08-19","price":105000,"sf":1252,"half_bath":1,"pool":0,"dom":162},
+    {"unit":"93","close_date":"2024-09-20","price":105000,"sf":1252,"half_bath":1,"pool":0,"dom":168},
+    {"unit":"86","close_date":"2025-01-16","price":110000,"sf":1380,"half_bath":1,"pool":0,"dom":277},
+    {"unit":"40","close_date":"2025-03-25","price":60000,"sf":1214,"half_bath":0,"pool":0,"dom":89},
+    {"unit":"78","close_date":"2025-03-04","price":114000,"sf":1214,"half_bath":0,"pool":0,"dom":132},
+    {"unit":"33","close_date":"2025-02-07","price":130000,"sf":1214,"half_bath":0,"pool":0,"dom":314}
+  ],
+  "comps_active_pending": [
+    {"unit":"23","status":"Active","price":99900,"sf":1252,"dom":13},
+    {"unit":"58","status":"Active","price":130000,"sf":1252,"dom":231,"pool_note":"Private, Community"},
+    {"unit":"42","status":"Pending","price":89000,"sf":1252,"dom":4,"pool_note":"Private, Community"},
+    {"unit":"63","status":"Pending (backups)","price":110000,"sf":1252,"dom":67}
+  ],
+  "adjustment_band": "$100K - $300K",
+  "band_values": {"bedroom":4000,"full_bath":7500,"half_bath":2500,"garage_space":10000,"private_pool":15000},
+  "summary": {
+    "sold_low3_ppsf":71.69,"sold_low3_val":89752,
+    "sold_overall_ppsf":84.33,"sold_overall_val":105578,
+    "sold_high3_ppsf":97.12,"sold_high3_val":121594,
+    "pending_val":92003,"active_val":107447
+  },
+  "recommended_value": 110000,
+  "pricing_tiers": {"aggressive":100000,"recommended":110000,"premium":130000},
+  "market_timing": {"window_days":540,"sold_count":7,"median_dom":162,"list_to_sale_pct":90.4,"months_inventory":2.6},
+  "published_report": "https://cma.joshhanoud.com/5500-ocean-shore-blvd-16-6a6539.html",
+  "gaps": ["Realist RealAVM tool rendering error", "Volusia Connect Live permit search would not accept automated address query", "iMapp/iMapp Demographics widget would not accept automated query"]
+}
