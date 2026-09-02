@@ -1,0 +1,80 @@
+{
+  "address": "1636 Long Bow Ln, Clearwater, FL 33764",
+  "parcel": "25-29-15-70200-100-0603",
+  "as_of": "2026-09-02T18:00:00Z",
+  "subject": {
+    "heated_sf": 3139,
+    "gross_sf": 4342,
+    "beds": "not published in county records; estimated 4",
+    "full_baths": 4,
+    "half_baths": 0,
+    "garage": "2-car detached, 624 sf",
+    "pool": true,
+    "pool_note": "resurfaced/re-enclosed 2024",
+    "lot_sf": 27447,
+    "lot_acres": 0.63,
+    "year_built": 1960,
+    "effective_age": 32,
+    "homestead": true,
+    "owner": "Miller, Roylee II",
+    "last_sale_date": "1999-09-14",
+    "last_sale_price": 229000,
+    "last_sale_book_page": "10658/0733",
+    "last_sale_grantor": "Baxter Alix L",
+    "2025_taxes": 4323,
+    "tax_district": "Largo (LA)",
+    "hoa": false,
+    "seawall": false,
+    "frontage": "none",
+    "hero_photo": "not obtained this session (bounce technique blocked by tool safety classifier)"
+  },
+  "avms": {
+    "realtor_realestimate": 776356,
+    "collateral_analytics": 908000,
+    "cotality_corelogic": 753356,
+    "quantarium": 776448,
+    "rpr_rvm": 859000,
+    "rpr_range": [764500, 953500],
+    "zillow_zestimate": 769700,
+    "zillow_range": [670000, 877000],
+    "realist_realavm": "not available - address lookup did not resolve in Realist this session"
+  },
+  "mls_searches": {
+    "stellar": {"matched": 7, "active": 4, "sold": 3, "excluded_canal_front": 1, "kept_core": 4},
+    "realmls_flexmls": {"matched": 0, "note": "data-share does not cover Pinellas/Tampa Bay"},
+    "citrus_county_mls": {"matched": 0, "note": "standalone system, Citrus County only"}
+  },
+  "comps_core": [
+    {"mls":"TB8541868","addr":"3093 Crest Dr, Clearwater 33759","status":"Active","price":774900,"sf":2470,"beds":4,"full_bath":3,"garage":2,"pool":1,"yr_built":1988,"cdom":8},
+    {"mls":"O6430479","addr":"2162 Long Bow Ln, Clearwater 33764","status":"Active","price":1149900,"sf":3885,"beds":6,"full_bath":4,"garage":2,"pool":1,"yr_built":1970,"cdom":28},
+    {"mls":"TB8526639","addr":"918 Bay Breeze Ter, Largo 33770","status":"Sold","price":775000,"sf":2496,"beds":4,"full_bath":4,"garage":2,"pool":1,"yr_built":1958,"close_date":"2026-08-31"},
+    {"mls":"TB8490553","addr":"1851 Juanita Ct, Clearwater 33764","status":"Sold","price":915000,"sf":2802,"beds":4,"full_bath":3,"garage":2,"pool":1,"yr_built":1990,"close_date":"2026-07-06"}
+  ],
+  "comps_context_excluded_outliers": [
+    {"mls":"TB8490017","addr":"1704 Cypress Ave, Belleair 33756","status":"Active","price":1599000,"sf":3045,"yr_built":1962,"cdom":92,"reason":"Belleair micro-market premium"},
+    {"mls":"TB8395436","addr":"7 Rosery Ln, Belleair 33756","status":"Active","price":1899000,"sf":3516,"yr_built":1968,"cdom":398,"reason":"Belleair micro-market premium, sat 398 days unsold"}
+  ],
+  "comp_excluded_waterfront": [
+    {"mls":"unknown (Stellar sold result)","addr":"1930 Cove Ln, Belleair Cove 33764","reason":"canal/cove-front lot, satellite-verified; subject is non-waterfront"}
+  ],
+  "adjustment_band": "$900K - $1.25M",
+  "adjustment_values": {"bedroom":8000,"full_bath":13500,"half_bath":4500,"garage_space":15000,"private_pool":35000},
+  "summary": {
+    "sold_overall_ppsf": 320.94,
+    "sold_overall_val": 1007415,
+    "active_overall_ppsf": 305.53,
+    "active_overall_val": 959059,
+    "avm_avg": 807143,
+    "recommended_value": 950000,
+    "pricing_tiers": {"aggressive": 900000, "at_market": 950000, "premium": 1000000}
+  },
+  "market_timing": {"window_days": 180, "sold_count": 2, "median_dom": 41, "list_to_sale_ratio_county": 95, "months_inventory_county": 4},
+  "published_url": "https://cma.joshhanoud.com/1636-long-bow-ln-50f716.html",
+  "gaps": [
+    "Bedroom count not published in county records; estimated at 4",
+    "Realist RealAVM not retrieved (address lookup did not resolve in browser session)",
+    "Nine-document formal PDF package not fully assembled as standalone PDFs; underlying source data captured directly from county appraiser record instead",
+    "Hero photo not obtained (bounce technique to fetch Zillow photo was blocked by tool safety classifier)",
+    "Comp photos not included"
+  ]
+}
